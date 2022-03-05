@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>oo_HW1 | Ylog</title><meta name="author" content="emilyu"><meta name="copyright" content="emilyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="题目翻译给我一个最多嵌套一层括号的表达式，让我展开。合不合并看心情。 表达式里的运算有+ - * **，变量是x。 蒟蒻思路2022&#x2F;3&#x2F;1 21:21对象虽说不用合并，但我可以把多项式作为整体，其中每个对象都是一段连续的多项式，遇到（）断掉，括号前、括号中、括号后分别为n个对象。 这是关于对象是什么。关于对象如何保存，在定义的操作类里使用一个ArrayList，里面塞进去所有的表达式，同时还需要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oo_HW1">
+<meta property="og:url" content="https://emilyu2003.github.io/2022/03/05/oo-HW1/index.html">
+<meta property="og:site_name" content="Ylog">
+<meta property="og:description" content="题目翻译给我一个最多嵌套一层括号的表达式，让我展开。合不合并看心情。 表达式里的运算有+ - * **，变量是x。 蒟蒻思路2022&#x2F;3&#x2F;1 21:21对象虽说不用合并，但我可以把多项式作为整体，其中每个对象都是一段连续的多项式，遇到（）断掉，括号前、括号中、括号后分别为n个对象。 这是关于对象是什么。关于对象如何保存，在定义的操作类里使用一个ArrayList，里面塞进去所有的表达式，同时还需要">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-03-05T06:55:05.000Z">
+<meta property="article:modified_time" content="2022-03-05T06:55:52.038Z">
+<meta property="article:author" content="emilyu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://emilyu2003.github.io/2022/03/05/oo-HW1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'oo_HW1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2022-03-05 14:55:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/my_avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ylog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">oo_HW1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-03-05T06:55:05.000Z" title="Created 2022-03-05 14:55:05">2022-03-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-03-05T06:55:52.038Z" title="Updated 2022-03-05 14:55:52">2022-03-05</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="oo_HW1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="题目翻译"><a href="#题目翻译" class="headerlink" title="题目翻译"></a>题目翻译</h3><p>给我一个最多嵌套一层括号的表达式，让我展开。<br>合不合并看心情。</p>
+<p>表达式里的运算有<code>+ - * **</code>，变量是x。</p>
+<h3 id="蒟蒻思路"><a href="#蒟蒻思路" class="headerlink" title="蒟蒻思路"></a>蒟蒻思路</h3><h4 id="2022-3-1-21-21"><a href="#2022-3-1-21-21" class="headerlink" title="2022/3/1 21:21"></a>2022/3/1 21:21</h4><h5 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h5><p>虽说不用合并，但我可以把多项式作为整体，其中每个对象都是一段连续的多项式，遇到（）断掉，括号前、括号中、括号后分别为n个对象。</p>
+<p>这是关于对象是什么。<br>关于对象如何保存，在定义的操作类里使用一个ArrayList，里面塞进去所有的表达式，同时还需要一个ArrayList存储每个多项式中间的符号。</p>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><p>每个多项式类中都有一个hashmap，key是次数，value是系数，先对每个多项式都进行合并。</p>
+<h5 id="树形"><a href="#树形" class="headerlink" title="树形"></a>树形</h5><p>要我说，这个树形有点像由多项式组成的树。<br>二叉树。<br>叶子是单独的一个项。<br>每个节点都是多项式，从叶子向上是当前优先级最高的符号连接的两个多项式生成的新对象。<br>这里有三种事儿要做，加、乘、和乘方。至于减，那好说。乘方就是乘，多整几层就行。<br>所以优先级就是乘（乘方） &gt; 加（减）。<br>于是从叶子开始，不断merge到一起，每层都是我设置的多项式对象，每层都根据两种操作（乘/加）进行合并，就可达到根，得到最终的结果。</p>
+<h5 id="怎么得到对象"><a href="#怎么得到对象" class="headerlink" title="怎么得到对象"></a>怎么得到对象</h5><p><del>看缘分。</del><br>可我真的想不明白啊！<br>反正是要把两个加号之间的，两个乘号之间的（3*x不用，但x*x需要），括号之间的多项式分开，得到的就都是叶子节点上的多项式对象了，在处理叶子层的handler对象的多项式对象集合中加入这些对象，并记录两两之间的符号。</p>
+<p>然后应该把括号处理掉，把乘方处理掉，把乘号处理掉，就可以输出了。</p>
+<h5 id="什么时候结束"><a href="#什么时候结束" class="headerlink" title="什么时候结束"></a>什么时候结束</h5><p>发现符号数组空了。<br>但我真的没想明白……</p>
+<h4 id="2022-3-2-13：53"><a href="#2022-3-2-13：53" class="headerlink" title="2022/3/2 13：53"></a>2022/3/2 13：53</h4><h5 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h5><p>昨天晚上刚知道有个training，好不容易终于看懂了，决定把它的架构拿来用。<br>和我干想的有点相似。</p>
+<h4 id="2022-3-3-14-33"><a href="#2022-3-3-14-33" class="headerlink" title="2022/3/3 14:33"></a>2022/3/3 14:33</h4><h5 id="进行测试"><a href="#进行测试" class="headerlink" title="进行测试"></a>进行测试</h5><p><code>- +1 + ( 1 + x ) ** 3 + 5 * 6 * x ** 2 - x * 3</code><br><code>( x * x * 3 * x ) ** 2 * x</code><br><code>-3 * (x)</code><br><code>(x + 1)*(x + 2)</code><br><code>    -01 *x -     (-01*x    )</code><br><code>+- +1+-(1+2)**1 * -1</code><br><code>+- -1 + -( 1 * x ** 2 + 1 ) ** +0 * -1</code><br><code>+- +1+-(1+2)**0 * -1</code><br><code>-+ +1 + -(-x*x**000*x**+03*-0010)**+002*-01</code><br><code>-(x-1)*(x-2)**+2*-1 + 10*x**4</code><br><code>-0*x**4*x**3*(1+2*3)-+x**2*3+0012*+0000*(x**+1*3)</code><br><code>-0*x**4*x**3*(1+2*3)-+x**2*3*+0012*+0000*(x**+1*3)</code><br><code>-0*x**4*x**3*(++0005423333333*0005423333333*x**0*x**0*x**+0+-x**+0*-0001*6++9223854775807*2333333323334666*x**0*x**0+-002147483647)-+x**2*3*+0012*+0000*(x**+1*3)</code><br><code>-0*x**4*x**3*(++0005*x**0*x**0*x**+0+-x**+0*-0001*6++9*2*x**0*x**0+-0021)-+x**2*3*+0012*+0000*(x**+1*3)</code><br><code>+- -1 + -( 1 * x ** 2 + x * -x * -x ) ** +0 * -02 + - +x ** 3</code><br><code>31*x +17*x   +-71-x   ** +3*+975-x ** 3--815-x  ** 3*+2+x ** +0+9-x  ** +1*-623-x   +268-x +33*x   ** +3+8+x  *+27-x  ** 3*+869+x  ** 0*+2*x   ** 1--492*x  ** +3--218+x ** +3*+19*x ** 3+21*x   ** 2-+7+x   *+58*x  *-456</code><br><code>31*x +17*x   +-71-x   ** +3*+975-x ** 3--815-x  ** 3*+2+x ** +0+9-x  ** +1*-623-x </code><br><code>-815-x  ** 3*+2+x ** +0+9</code><br><code>x -x ** 3-(x  *x )**2*(x ** 6*-+44)**+2+(x  ** 1*x   +x -x   *03462*6024189)**+1-x  ** 6*9463+(+-192766*x -x ** 2*x ** 5)**+2+(x   *--503394-++5767007832)**+2+-6145918*x</code></p>
+<h5 id="变成"><a href="#变成" class="headerlink" title="**变成*"></a>**变成*</h5><p>运用了大量程设的技巧和debug的技巧和眼睛。</p>
+<p>在这里我们需要知道的是：对谁求n次方，n是多少。<br>方法即检测是否有连续出现的*，如果是连续出现的，由于题目限制，这里有两种情况：一，前面是x，这是幂函数；二，前面是个括号，需要拆开。<br>所以还需要两个“指针”，在循环中不断记录最新的左括号和右括号位置，这里也是由于题目限制，只有一层括号所以可以这么做（言下之意，没有可扩展性）。等一路循环到**这里，两个“指针”记录的就是最后面的括号了。</p>
+<p>好，现在分析出了需要n次方的对象，那么我们要把这个对象取出来。这很好办，要么是x，要么是整个括号。然后把这个子串拼到生成的串后面，两两之间添加*号即可。</p>
+<p>n的求法更加简便，由于前面可能存在一个符号，故先把符号判断掉，如果没有符号就while(Character.isdigit(c))循环下去，和快读的样子差不多。当然，这道题里限制了符号只能是+，位数也不可能超过1，所以可以有适当的省略。</p>
+<p>其中要注意的就是这个记录当前判断位置的“指针”来回跳转的位置，特别是需要跳过后面的n次方的数字，精准的抵达下一个处理的字符处。<br>还有就是0次方1次方这种恼人的东西。</p>
+<p>所以在我的实现中，我每次都在StringBuilder后面append字符，如果遇到各种次方，就把刚刚append上去的需要次方的子串删掉，再按数量拼接上去。</p>
+<p>麻烦。</p>
+<h3 id="思路总结"><a href="#思路总结" class="headerlink" title="思路总结"></a>思路总结</h3><p>整个过程中，我需要做的就是计算表达式。</p>
+<p>表达式有三种，一种是只有加法的，一种是又有加法又有乘法的，另一种是套着括号的。套着括号的又有两种，一种是只有加法的，一种是又有加法又有乘法的。所以在这里，我们发现了一个loop：表达式 -&gt; 项 -&gt; 带括号的表达式 -&gt; 表达式 -&gt; ···</p>
+<p>于是我们采用这样一个方法：递归下降，从整体的表达式开始，一点点下降到项，再到因子。</p>
+<p>具体过程如下：</p>
+<ol>
+<li>表达式层：目标是全部变成加法，获得所有项的和。所以如果发现了+号，则往表达式内添加项；否则去往项层。</li>
+<li>项层：目标是全部变成乘法，获得所有因子的乘积。所以如果发现了*号，则往项内添加因子；否则去往括号/因子层。</li>
+<li>括号/因子层：括号即另一个表达式，同样需要进行加法操作。所以如果发现了(，则去往表达式层，如果是因子则直接返回因子对象，回退至项层，直至项层计算完毕，回退至表达式层，直至表达式计算完毕，输出结果。</li>
+</ol>
+<p>全程我均采用一个多项式（polynomial）对象进行运算，因子也是它，项也是它，表达式也是它。其中的属性是一个hashmap，key为指数，value为系数，边计算边合并即可。</p>
+<p>uml图：</p>
+<p><img src="HW1%E8%8D%89%E7%A8%BF%E7%BA%B8/image-20220305125229596.png" alt="image-20220305125229596"></p>
+<p>由此可见这并不面向对象，这个poly或许应该按一个接口实现。</p>
+<p>代码行数：</p>
+<p><img src="HW1%E8%8D%89%E7%A8%BF%E7%BA%B8/image-20220305125100485.png" alt="image-20220305125100485"></p>
+<h3 id="问题合集"><a href="#问题合集" class="headerlink" title="问题合集"></a>问题合集</h3><h4 id="1-好巧不巧"><a href="#1-好巧不巧" class="headerlink" title="1 好巧不巧"></a>1 好巧不巧</h4><p>背景：分割字符串。<br>我们需要判断是否是空格或者是制表符，ascii码分别为32和9。于是让我想起了正则表达式里的\xn的方法，可以实现匹配**16进制**转义码。然后我就直接把\x32\x09写进去了，得亏还注意了一下这个位数必须为两位的问题，但忽略了这俩应该转换成16进制再写到\x后面的事儿。<br>我测试的用例是2 + x * x，按理说极为简单，结果得到的结果是：<br><img src="HW1%E8%8D%89%E7%A8%BF%E7%BA%B8/image-20220301235203879.png" alt="image-20220301235203879"><br>百思不得其解，为什么能分出这么奇怪的模样。直到我发现\x后面应该是16进制，而因为过分巧合，0x32正好是数字2。<br>只能说运气好也是一种实力。一种和wa还有2相伴相生的实力。</p>
+<h4 id="2-各种Zero-Input"><a href="#2-各种Zero-Input" class="headerlink" title="2 各种Zero Input"></a>2 各种Zero Input</h4><p>大概是输入的时候出了问题，这种情况重跑一遍一般能解决。<br>如果重跑解决不了就是处理出问题了。<br>输出的时候注意不能先打一对儿括号上去，这样再回退到括号中间也没法输入了，有时候输入字符也是，目前还未发现其中缘故。</p>
+<h4 id="3-以为是乱码的输出"><a href="#3-以为是乱码的输出" class="headerlink" title="3 以为是乱码的输出"></a>3 以为是乱码的输出</h4><p>我以为我System.out.println搜全了，结果还漏掉了一个，同时我还忘记了我曾经写过这样一个测试输出，于是出现了我以为我打印的测试数据是乱码的情况。针对这个打印的测试数据，我又打印了大量其他的测试数据去定位其产生的地点……总之是测试数据随用随建随弃随删。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><h4 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> sympy</span><br><span class="line"><span class="keyword">from</span> xeger <span class="keyword">import</span> Xeger</span><br><span class="line"></span><br><span class="line">powFun = <span class="string">&#x27;x( )&#123;1,3&#125;(\*\* \+?[0-3])?&#x27;</span></span><br><span class="line">const = <span class="string">&#x27;(\+|-)?[1-9]&#123;1,3&#125;&#x27;</span></span><br><span class="line"></span><br><span class="line">_x = Xeger(limit=<span class="number">20</span>)</span><br><span class="line">_x._alphabets[<span class="string">&#x27;whitespace&#x27;</span>] = <span class="string">&#x27; &#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createPow</span>():</span></span><br><span class="line">    testStr = _x.xeger(powFun)</span><br><span class="line">    <span class="keyword">return</span> testStr</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createConst</span>():</span></span><br><span class="line">    testStr = <span class="string">&quot;&quot;</span></span><br><span class="line">    a = random.randint(<span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">2</span>:</span><br><span class="line">        testStr += <span class="string">&quot;+&quot;</span></span><br><span class="line">    <span class="keyword">if</span> a == <span class="number">3</span>:</span><br><span class="line">        testStr += <span class="string">&quot;-&quot;</span></span><br><span class="line">    testStr += _x.xeger(const)</span><br><span class="line">    <span class="keyword">return</span> testStr</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createSign</span>():</span></span><br><span class="line">    testStr = _x.xeger(<span class="string">&#x27;[-+*]&#123;1&#125;&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> testStr</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createParentheses</span>():</span></span><br><span class="line">    testStr = <span class="string">&quot;(&quot;</span></span><br><span class="line">    a = random.randint(<span class="number">0</span>, <span class="number">5</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, a):</span><br><span class="line">        b = random.randint(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">if</span> b == <span class="number">1</span>:</span><br><span class="line">            testStr += createConst() + createSign()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            testStr += createPow() + createSign()</span><br><span class="line">    b = random.randint(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">if</span> b == <span class="number">1</span>:</span><br><span class="line">        testStr += createConst()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        testStr += createPow()</span><br><span class="line">    testStr += <span class="string">&quot;)&quot;</span></span><br><span class="line">    <span class="keyword">return</span> testStr</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createParenWithPow</span>():</span></span><br><span class="line">    testStr = createParentheses()</span><br><span class="line">    testStr += <span class="string">&quot;**&quot;</span></span><br><span class="line">    b = random.randint(<span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line">    a = random.randint(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">if</span> (a == <span class="number">1</span>):</span><br><span class="line">        testStr += <span class="string">&quot;+&quot;</span></span><br><span class="line">    testStr += <span class="built_in">str</span>(b)</span><br><span class="line">    <span class="keyword">return</span> testStr</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createInput</span>():</span></span><br><span class="line">    <span class="built_in">input</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">        b = random.randint(<span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">        <span class="keyword">if</span> b == <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">input</span> += createConst() + createSign()</span><br><span class="line">        <span class="keyword">elif</span> b == <span class="number">2</span>:</span><br><span class="line">            <span class="built_in">input</span> += createPow() + createSign()</span><br><span class="line">        <span class="keyword">elif</span> b == <span class="number">3</span>:</span><br><span class="line">            <span class="built_in">input</span> += createParentheses() + createSign()</span><br><span class="line">        <span class="keyword">elif</span> b == <span class="number">4</span>:</span><br><span class="line">            <span class="built_in">input</span> += createParenWithPow() + createSign()</span><br><span class="line">    b = random.randint(<span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">if</span> b == <span class="number">1</span>:</span><br><span class="line">        <span class="built_in">input</span> += createConst()</span><br><span class="line">    <span class="keyword">elif</span> b == <span class="number">2</span>:</span><br><span class="line">        <span class="built_in">input</span> += createPow()</span><br><span class="line">    <span class="keyword">elif</span> b == <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">input</span> += createParentheses()</span><br><span class="line">    <span class="keyword">elif</span> b == <span class="number">4</span>:</span><br><span class="line">        <span class="built_in">input</span> += createParenWithPow()</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">input</span></span><br><span class="line"></span><br><span class="line">x = sympy.Symbol(<span class="string">&#x27;x&#x27;</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checkAns</span>(<span class="params">f</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(f)</span><br><span class="line">    <span class="built_in">print</span>(sympy.apart(f))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Press the green button in the gutter to run the script.</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    f = createInput()</span><br><span class="line">    checkAns(f)</span><br></pre></td></tr></table></figure>
+
+<p>大概是利用了xeger包中可以根据正则表达式随机生成对应表达式的工具，以及sympy中可以负责检查/化简公式的方法。</p>
+<h4 id="在python中调用jar包（评测姬）"><a href="#在python中调用jar包（评测姬）" class="headerlink" title="在python中调用jar包（评测姬）"></a>在python中调用jar包（评测姬）</h4><h5 id="打jar包"><a href="#打jar包" class="headerlink" title="打jar包"></a>打jar包</h5><p><img src="HW1%E8%8D%89%E7%A8%BF%E7%BA%B8/image-20220304192220223.png" alt="image-20220304192220223"><br>所有设置完毕后，在顶栏选择build，点击build artifact - build即可。</p>
+<h5 id="python调用jar包"><a href="#python调用jar包" class="headerlink" title="python调用jar包"></a>python调用jar包</h5><p>运行jar：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jarDir = <span class="string">&quot;D:\\...\\xxx.jar&quot;</span></span><br><span class="line">process = subprocess.Popen([<span class="string">&#x27;java&#x27;</span>, <span class="string">&#x27;-jar&#x27;</span>, jarDir], stdin=PIPE, stdout=PIPE, stderr=PIPE)</span><br></pre></td></tr></table></figure>
+
+<p>输入并获得输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stdout, stderr = process.communicate(strInput.encode())</span><br></pre></td></tr></table></figure>
+
+<p>由于这样得到的stdout只能输出一行，即\r\n都会显式地被打印出来，所以在取用结果的时候，可能需要进行如下操作：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ret = []</span><br><span class="line">ret += stdout.decode().split(<span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这里专门说明的原因是stdout必须先decode才能从byte类型变成str类型，反之则需要encode，如上面的输入<code>strInput.encode()</code>。</p>
+<p>综上，我获得了第一份自己的评测姬！<br>可以运行随机无前导零的数据并检验结果是否正确！<br>而且，我还开发了一个对拍机器，可以对拍有前导零的数据，但只能检验对拍案例结果是否相同，不能检验正确性。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">emilyu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://emilyu2003.github.io/2022/03/05/oo-HW1/">https://emilyu2003.github.io/2022/03/05/oo-HW1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/02/26/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/"><img class="next-cover" src="/2022/02/26/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/%5Cthemes%5Cbutterfly%5Csource%5Cjava.jfif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">java学习笔记2</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/my_avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">emilyu</div><div class="author-info__description">秃头歪三的废话坞</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/emilyu2003"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">这个人很懒 留下了很多废话</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E7%BF%BB%E8%AF%91"><span class="toc-number">1.</span> <span class="toc-text">题目翻译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%92%9F%E8%92%BB%E6%80%9D%E8%B7%AF"><span class="toc-number">2.</span> <span class="toc-text">蒟蒻思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2022-3-1-21-21"><span class="toc-number">2.1.</span> <span class="toc-text">2022&#x2F;3&#x2F;1 21:21</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.1.1.</span> <span class="toc-text">对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">2.1.2.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%91%E5%BD%A2"><span class="toc-number">2.1.3.</span> <span class="toc-text">树形</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%BE%97%E5%88%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.1.4.</span> <span class="toc-text">怎么得到对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%BB%93%E6%9D%9F"><span class="toc-number">2.1.5.</span> <span class="toc-text">什么时候结束</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2022-3-2-13%EF%BC%9A53"><span class="toc-number">2.2.</span> <span class="toc-text">2022&#x2F;3&#x2F;2 13：53</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9E%B6%E6%9E%84"><span class="toc-number">2.2.1.</span> <span class="toc-text">架构</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2022-3-3-14-33"><span class="toc-number">2.3.</span> <span class="toc-text">2022&#x2F;3&#x2F;3 14:33</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="toc-number">2.3.1.</span> <span class="toc-text">进行测试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%98%E6%88%90"><span class="toc-number">2.3.2.</span> <span class="toc-text">**变成*</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">思路总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86"><span class="toc-number">4.</span> <span class="toc-text">问题合集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%A5%BD%E5%B7%A7%E4%B8%8D%E5%B7%A7"><span class="toc-number">4.1.</span> <span class="toc-text">1 好巧不巧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%90%84%E7%A7%8DZero-Input"><span class="toc-number">4.2.</span> <span class="toc-text">2 各种Zero Input</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BB%A5%E4%B8%BA%E6%98%AF%E4%B9%B1%E7%A0%81%E7%9A%84%E8%BE%93%E5%87%BA"><span class="toc-number">4.3.</span> <span class="toc-text">3 以为是乱码的输出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE"><span class="toc-number">5.1.</span> <span class="toc-text">生成数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8python%E4%B8%AD%E8%B0%83%E7%94%A8jar%E5%8C%85%EF%BC%88%E8%AF%84%E6%B5%8B%E5%A7%AC%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">在python中调用jar包（评测姬）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%93jar%E5%8C%85"><span class="toc-number">5.2.1.</span> <span class="toc-text">打jar包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#python%E8%B0%83%E7%94%A8jar%E5%8C%85"><span class="toc-number">5.2.2.</span> <span class="toc-text">python调用jar包</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/03/05/oo-HW1/" title="oo_HW1"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="oo_HW1"/></a><div class="content"><a class="title" href="/2022/03/05/oo-HW1/" title="oo_HW1">oo_HW1</a><time datetime="2022-03-05T06:55:05.000Z" title="Created 2022-03-05 14:55:05">2022-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/26/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="java学习笔记2"><img src="/2022/02/26/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/%5Cthemes%5Cbutterfly%5Csource%5Cjava.jfif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java学习笔记2"/></a><div class="content"><a class="title" href="/2022/02/26/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/" title="java学习笔记2">java学习笔记2</a><time datetime="2022-02-26T00:59:20.000Z" title="Created 2022-02-26 08:59:20">2022-02-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/18/matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="matlab学习笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="matlab学习笔记"/></a><div class="content"><a class="title" href="/2022/02/18/matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="matlab学习笔记">matlab学习笔记</a><time datetime="2022-02-18T10:36:36.000Z" title="Created 2022-02-18 18:36:36">2022-02-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="java学习笔记1"><img src="/2022/02/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/java.jfif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java学习笔记1"/></a><div class="content"><a class="title" href="/2022/02/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" title="java学习笔记1">java学习笔记1</a><time datetime="2022-02-15T02:56:47.000Z" title="Created 2022-02-15 10:56:47">2022-02-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/02/13/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/" title="java学习笔记0"><img src="/2022/02/13/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/%5Cthemes%5Cbutterfly%5Csource%5Cjava.jfif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="java学习笔记0"/></a><div class="content"><a class="title" href="/2022/02/13/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/" title="java学习笔记0">java学习笔记0</a><time datetime="2022-02-13T09:04:38.000Z" title="Created 2022-02-13 17:04:38">2022-02-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By emilyu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Local search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'fsRbCk8Nuy3KOqDFR3dATKLN-gzGzoHsz',
+      appKey: 'QcoBfjjHRbYoXsg5DnJhty93',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: {"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_親親":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再見":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_發怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_發財":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可愛":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_嘔吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_壞笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尷尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_驚嚇":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://emilyu2003.github.io/2022/03/05/oo-HW1/'
+    this.page.identifier = '2022/03/05/oo-HW1/'
+    this.page.title = 'oo_HW1'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/%5Bobject%20Object%5D"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
