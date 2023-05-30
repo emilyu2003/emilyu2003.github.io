@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>复杂性类 | Ylog</title><meta name="keywords" content="复杂性类"><meta name="author" content="emilyu"><meta name="copyright" content="emilyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="复杂性类  是一堆语言的集合！不是一堆算法！ 图灵机形式语言你的形式语言学到哪里去了！！ 字母表 + 开始状态 + 终止状态 + 转移函数，是一些符合规则的字符串集合，只研究语法，不关心语义。 也就是说，图灵机就是用来识别语言的工具。那语言又是干什么用的？ TM用自己的话来描述，图灵机就是根据一定的规则，依据读入来控制读写头移动与操作的机器。要素有字母表、状态集合、转移函数。其中，一定的读入可以让">
+<meta property="og:type" content="article">
+<meta property="og:title" content="复杂性类">
+<meta property="og:url" content="https://emilyu2003.github.io/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/index.html">
+<meta property="og:site_name" content="Ylog">
+<meta property="og:description" content="复杂性类  是一堆语言的集合！不是一堆算法！ 图灵机形式语言你的形式语言学到哪里去了！！ 字母表 + 开始状态 + 终止状态 + 转移函数，是一些符合规则的字符串集合，只研究语法，不关心语义。 也就是说，图灵机就是用来识别语言的工具。那语言又是干什么用的？ TM用自己的话来描述，图灵机就是根据一定的规则，依据读入来控制读写头移动与操作的机器。要素有字母表、状态集合、转移函数。其中，一定的读入可以让">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://emilyu2003.github.io/img/my_avatar.png">
+<meta property="article:published_time" content="2023-05-30T05:34:51.000Z">
+<meta property="article:modified_time" content="2023-05-30T05:35:02.524Z">
+<meta property="article:author" content="emilyu">
+<meta property="article:tag" content="算法学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://emilyu2003.github.io/img/my_avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://emilyu2003.github.io/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '复杂性类',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-30 13:35:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/my_avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">13</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ylog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">复杂性类</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-05-30T05:34:51.000Z" title="Created 2023-05-30 13:34:51">2023-05-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-05-30T05:35:02.524Z" title="Updated 2023-05-30 13:35:02">2023-05-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="复杂性类"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="复杂性类"><a href="#复杂性类" class="headerlink" title="复杂性类"></a>复杂性类</h1><!--真是让人无法下手…-->
+
+<p>是一堆语言的集合！不是一堆算法！</p>
+<h2 id="图灵机"><a href="#图灵机" class="headerlink" title="图灵机"></a>图灵机</h2><h3 id="形式语言"><a href="#形式语言" class="headerlink" title="形式语言"></a>形式语言</h3><p>你的形式语言学到哪里去了！！</p>
+<p>字母表 + 开始状态 + 终止状态 + 转移函数，是一些符合规则的字符串集合，只研究语法，不关心语义。</p>
+<p>也就是说，图灵机就是用来识别语言的工具。那语言又是干什么用的？</p>
+<h3 id="TM"><a href="#TM" class="headerlink" title="TM"></a>TM</h3><p>用自己的话来描述，图灵机就是根据一定的规则，依据读入来控制读写头移动与操作的机器。要素有字母表、状态集合、转移函数。其中，一定的读入可以让图灵机停机并产生输出，输出为1则这样的输入属于该图灵机决定的“语言”。</p>
+<p>图灵机运行的时候，时刻对它拍照就能得到<strong>格局</strong>：纸带样子 + 状态集合 + 读写头位置</p>
+<h3 id="DTM-amp-NDTM"><a href="#DTM-amp-NDTM" class="headerlink" title="DTM &amp; NDTM"></a>DTM &amp; NDTM</h3><p>参考dfa和nfa，大概就是转移函数变了，可以有同一个字符对应多个转移状态。</p>
+<p>看下去，有张图很形象，这里不太清晰！</p>
+<h3 id="PTM"><a href="#PTM" class="headerlink" title="PTM"></a>PTM</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530111248285.png" class="" title="image-20230530111248285">
+
+<p>在NDTM上随机地选转移函数。</p>
+<h3 id="通用图灵机"><a href="#通用图灵机" class="headerlink" title="通用图灵机"></a>通用图灵机</h3><p>一开始把这里跳过了，后来发现这个东西很重要…</p>
+<img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530105029266.png" class="" title="image-20230530105029266">
+
+<p><del>俗称，编译器。</del></p>
+<p><del>或者更贴切的而说，套娃。</del></p>
+<p>长这样：</p>
+<img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530105147941.png" class="" title="image-20230530105147941">
+
+<p>Mα denotes the TM represented by α ，这句话我暂时没有理解。但是看到PPT上的红字encoding，感觉有机可图。</p>
+<p>考虑对符号和状态用01串进行编码（怎么编不管了，反正就是不会有冲突），并参考了这里：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/260512272.%E5%B0%B1%E5%8F%AF%E4%BB%A5%E6%8A%8ATM%E5%8F%98%E6%88%90%E4%B8%80%E4%B8%B2%E7%A0%81%E3%80%82%E6%89%80%E4%BB%A5%E9%80%9A%E7%94%A8%E5%9B%BE%E7%81%B5%E6%9C%BA%E9%9C%80%E8%A6%81%E7%9A%84%E5%85%B6%E5%AE%9E%E6%98%AF%E4%B8%80%E4%B8%AA%E5%9B%BE%E7%81%B5%E6%9C%BA%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E4%BB%96%E7%9A%84%E7%BC%96%E7%A0%81%EF%BC%81">https://zhuanlan.zhihu.com/p/260512272.就可以把TM变成一串码。所以通用图灵机需要的其实是一个图灵机的输入和他的编码！</a></p>
+<h3 id="停机"><a href="#停机" class="headerlink" title="停机"></a>停机</h3><p>输入为不属于这个语言的字符串时：</p>
+<p><strong>识别</strong>：要么停机且处于拒绝状态，要么永远不停机；</p>
+<p><strong>判定</strong>：能停机且拒绝，不能不停机。</p>
+<h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><p>一些补充，因为我真的真的非常困惑：</p>
+<p>NP问题是多项式时间内可以判定一个解对不对，但同时他也是运行在多项式时间的NDTM上的判定语言的复杂度类，这两个概念我无法对应上，也就是说，我卡在语言到底是个什么上了。</p>
+<p>翻阅形式语言的教材，我发现：</p>
+<blockquote>
+<p>因此 , 一个问题 , 如果它的语言是递归的 , 则 称 此 问 题 是 可 判 定 的 ( decidable ) ; 否 则 , 称 此 问 题 是 不 可 判 定 的(undecidable)。   </p>
+</blockquote>
+<p>这又是什么？</p>
+<p>形式语言的教材给了我另一个收获，也就是前面我的疑惑其实是概念上的混淆：</p>
+<ul>
+<li><blockquote>
+<p> NP 表示不确定的图灵机在多项式时间 (步数 )内可判定的语言类。  </p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>这些语言对应的问题称为 NP类问题(class of NP )  ，这种语言称为非确定性多项式可判定的 </p>
+</blockquote>
+</li>
+</ul>
+<p>很好，那什么叫语言对应的问题？</p>
+<p>判定一个句子是否属于一个语言 = 判定一组解是否能满足SAT，或者说（定义）是在非确定的图灵机上多项式步骤内判定一个句子是否属于一个语言 = （实际应用）给定图G和回路L，判断是否存在比L的长度更短的回路，这很抽象…我再思考一下能不能用数学语言描述，不行的话就意会吧。</p>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><h3 id="DTIME"><a href="#DTIME" class="headerlink" title="DTIME"></a>DTIME</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230529165913125.png" class="" title="image-20230529165913125">
+
+<p>其中D代表deterministic.</p>
+<h3 id="NTIME"><a href="#NTIME" class="headerlink" title="NTIME"></a>NTIME</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230529222052399.png" class="" title="image-20230529222052399">
+
+<p>其中N代表none-deterministic.</p>
+<h3 id="BPTIME"><a href="#BPTIME" class="headerlink" title="BPTIME"></a>BPTIME</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530111225099.png" class="" title="image-20230530111225099">
+
+<p>得和PTM对应着看。</p>
+<h3 id="RTIME"><a href="#RTIME" class="headerlink" title="RTIME"></a>RTIME</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530113353363.png" class="" title="image-20230530113353363">
+
+<p>这块儿，我觉得书里写错了…下面一行应该是 $Pr[M(x)=0]=1$.</p>
+<h3 id="ZTIME"><a href="#ZTIME" class="headerlink" title="ZTIME"></a>ZTIME</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530114359431.png" class="" title="image-20230530114359431">
+
+<p>有点抽象，但是他和前面几个时间复杂度类的区别在于，它不限制算法必须在多项式时间内跑完——他是一个期望为多项式时间的NTIME类（我自己的理解），因为它一定返回正确的结果。</p>
+<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230529214806139.png" class="" title="image-20230529214806139"><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230529214817732.png" class="" title="image-20230529214817732">
+
+<p>所以，<img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230529215102175.png" class="" title="image-20230529215102175"></p>
+<p>因为格局数目至多为 $2^{O(S(n))}$。  </p>
+<h2 id="DTM"><a href="#DTM" class="headerlink" title="DTM"></a>DTM</h2><h3 id="P"><a href="#P" class="headerlink" title="P"></a>P</h3><img src="复杂性类/image-20230529165930561.png" alt="image-20230529165930561" style="zoom:67%;" />
+
+<p>在多项式时间内确定一个可以解决问题的图灵机。</p>
+<p>例子：上下文无关文法。</p>
+<h2 id="NDTM"><a href="#NDTM" class="headerlink" title="NDTM"></a>NDTM</h2><h3 id="NP"><a href="#NP" class="headerlink" title="NP"></a>NP</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230529170312435.png" class="" title="image-20230529170312435">
+
+<p>在多项式时间内验证一个解是否正确。但如果从“复杂性类”是一群语言的集合角度出发，怎么理解呢？这里主要的理解问题在于整个定义里面充斥着exists…</p>
+<p>我重新思考了一下，发现对于NP，其实定义没说它是运行在多项式时间的NDTM上的判定问题（除非从NTIME出发），如果给出在DTM在每一步上选什么（certificate）那确实可以再多项式时间内判定这个语言，但这样NDTM也就衰退成为DTM了（怎么衰退的），所以同样在DTM上运行的判定算法，如果能在多项式时间内自己找到答案那就是P类语言，需要按一个多项式长度的01串走并停机的就是NP类语言。</p>
+<p>这里的$p(|x|)$我理解为：与$x$长度有关的多项式。</p>
+<p>这里的证书也可以写成<code>witness</code>.</p>
+<p>例子：最大独立集（INDSET）、TSP、线性规划、连通性</p>
+<p>那我再细化一下自己的问题，就是NDTM上的判定问题和给出一个序列在DTM上运行的判定问题怎么等价了（上文问怎么衰退处）？通过看书我解决了这个问题：</p>
+<blockquote>
+<p>NDTM has two transition functions δ0 and δ1, and a special state denoted by q_accept.</p>
+</blockquote>
+<p>也就是说，DTM是自动的，它根据q_start，读入，移动，换状态，读入，移动，换状态，直到停机；NDTM多一个选择转移函数的过程。</p>
+<p>放个图：</p>
+<img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530094750649.png" class="" title="image-20230530094750649">
+
+<p>所以P是在DTM上多项式步骤内可以停机的语言类，NP是在NDTM上多项式步骤内可以停机的语言类 = 给出一个01序列，在DTM上可以停机的语言类 = 给出一个解，可以判定这个解对不对（根据停机时的答案）的语言类。</p>
+<h3 id="co-NP"><a href="#co-NP" class="headerlink" title="co-NP"></a>co-NP</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530115703994.png" class="" title="image-20230530115703994">
+
+<p>区别就是存在变成任意了。我想了很久为什么NP的对偶问题不是”$x \notin L$ iff 任意一个串u和一个多项式时间内运行的确定的图灵机，使得按串走，都能得到M(x,u)=0“，然后发现其实是一个意思，但没有人喜欢拧着说$x \notin L$ ，其实就是多项式时间内证伪的意思。但说实话，感觉co-NP很强。</p>
+<p>$p \subseteq NP \cap co-NP$.</p>
+<h3 id="归约"><a href="#归约" class="headerlink" title="归约"></a>归约</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530104011396.png" class="" title="image-20230530104011396">
+
+<img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530104023559.png" class="" title="image-20230530104023559">
+
+<h2 id="PTM-1"><a href="#PTM-1" class="headerlink" title="PTM"></a>PTM</h2><h3 id="BPP"><a href="#BPP" class="headerlink" title="BPP"></a>BPP</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530111608218.png" class="" title="image-20230530111608218">
+
+<p>他这里比较迷惑的地方在于，这个2/3不但只需要是一个大于1/2的数就行，而且这个概率是针对随机抛币抛出来的一个多项式长度的r，按r走，判断x属于L正确的概率至少为 2/3。好抽象，这是怎么构造的…</p>
+<p>会有双边错误，即判断$x\in L$时输出0的概率和判断$x\notin L$时输出1的概率都大于2/3.</p>
+<h3 id="RP"><a href="#RP" class="headerlink" title="RP"></a>RP</h3><img src="复杂性类/image-20230530113404384.png" alt="image-20230530113404384" style="zoom:67%;" />
+
+<p>单边错误，因为判断$x\notin L$时一定输出0，但判断$x\in L$时输出1的概率大于2/3.</p>
+<p>我感觉可以这样理解，就是把PTM的各个转移函数化成一棵树，有两种分支，一种走到头（图灵机停机）返回1（可接受），另一种返回0（不可接受）。对于RP，这个PTM的分支返回结果都是真的，判断$x\notin L$时就一定不会走到可接受的分支上去，但判断$x\in L$时有大于2/3的概率走到可接受的分支上。</p>
+<h3 id="co-RP"><a href="#co-RP" class="headerlink" title="co-RP"></a>co-RP</h3><p>反过来定义另一边的单边错误，即判断$x\in L$时一定输出1，但判断$x\notin L$时输出0的概率大于2/3.</p>
+<p><code>Monte Carlo</code>属于是BPP类，包括两种单边错误RP类和co-RP类.</p>
+<h3 id="ZPP"><a href="#ZPP" class="headerlink" title="ZPP"></a>ZPP</h3><img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530114412772.png" class="" title="image-20230530114412772">
+
+<p>无错误，但是运行时间只是期望为多项式时间，可能一直不停机。</p>
+<p>但他真的很神奇，因为ZPP = RP ∩ co-RP ：首先 $ZPP \subseteq RP$ 并且 $ZPP \subseteq co-RP$ 是很显然的（<strong>大错特错！</strong>期望时间和保证在多项式时间内停机完全不同！），所以 $ZPP \subseteq RP \cap co-RP$ ；反过来的话：</p>
+<img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530131821912.png" class="" title="image-20230530131821912">
+
+<p>但我还有个疑问，就是<code>Monte Carlo</code>保证$x\notin L$不错，那为什么在$M_L$ 输出yes的时候接受这个yes？哦！因为前面自己也说了，<code>Monte Carlo</code>保证了分支的结果一定是对的，只不过上哪个分支比较随机，所以如果以大于2/3的概率被接受了那一定是对的（两个概念）。</p>
+<p>弥补前面的错误（还没证完）：</p>
+<img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530131937241.png" class="" title="image-20230530131937241">
+
+<img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530131943467.png" class="" title="image-20230530131943467">
+
+<p>这里区别于$P \subseteq NP \cap co-NP$，因为这里不能换成等于号（目前还悬而未决）。</p>
+<p><code>Las Vegas</code>算法属于ZPP类。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，我们解决了我能看懂的部分——</p>
+<img src="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/image-20230530133103896.png" class="" title="image-20230530133103896">
+
+<p>再接再厉！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">emilyu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://emilyu2003.github.io/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/">https://emilyu2003.github.io/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/">算法学习</a></div><div class="post_share"><div class="social-share" data-image="/img/my_avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/05/28/rand_Alg_Note_1/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">random_alg_0</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/05/28/rand_Alg_Note_1/" title="random_alg_0"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-28</div><div class="title">random_alg_0</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/my_avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">emilyu</div><div class="author-info__description">秃头歪三的废话坞</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">13</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/emilyu2003"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">这个人很懒 留下了很多废话</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text">复杂性类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%81%B5%E6%9C%BA"><span class="toc-number">1.1.</span> <span class="toc-text">图灵机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80"><span class="toc-number">1.1.1.</span> <span class="toc-text">形式语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TM"><span class="toc-number">1.1.2.</span> <span class="toc-text">TM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DTM-amp-NDTM"><span class="toc-number">1.1.3.</span> <span class="toc-text">DTM &amp; NDTM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PTM"><span class="toc-number">1.1.4.</span> <span class="toc-text">PTM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%9B%BE%E7%81%B5%E6%9C%BA"><span class="toc-number">1.1.5.</span> <span class="toc-text">通用图灵机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9C%E6%9C%BA"><span class="toc-number">1.1.6.</span> <span class="toc-text">停机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.</span> <span class="toc-text">语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">1.3.</span> <span class="toc-text">时间复杂度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DTIME"><span class="toc-number">1.3.1.</span> <span class="toc-text">DTIME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NTIME"><span class="toc-number">1.3.2.</span> <span class="toc-text">NTIME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BPTIME"><span class="toc-number">1.3.3.</span> <span class="toc-text">BPTIME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RTIME"><span class="toc-number">1.3.4.</span> <span class="toc-text">RTIME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZTIME"><span class="toc-number">1.3.5.</span> <span class="toc-text">ZTIME</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">1.4.</span> <span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DTM"><span class="toc-number">1.5.</span> <span class="toc-text">DTM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#P"><span class="toc-number">1.5.1.</span> <span class="toc-text">P</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NDTM"><span class="toc-number">1.6.</span> <span class="toc-text">NDTM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NP"><span class="toc-number">1.6.1.</span> <span class="toc-text">NP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#co-NP"><span class="toc-number">1.6.2.</span> <span class="toc-text">co-NP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%92%E7%BA%A6"><span class="toc-number">1.6.3.</span> <span class="toc-text">归约</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PTM-1"><span class="toc-number">1.7.</span> <span class="toc-text">PTM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BPP"><span class="toc-number">1.7.1.</span> <span class="toc-text">BPP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RP"><span class="toc-number">1.7.2.</span> <span class="toc-text">RP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#co-RP"><span class="toc-number">1.7.3.</span> <span class="toc-text">co-RP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZPP"><span class="toc-number">1.7.4.</span> <span class="toc-text">ZPP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.8.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/" title="复杂性类">复杂性类</a><time datetime="2023-05-30T05:34:51.000Z" title="Created 2023-05-30 13:34:51">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/28/rand_Alg_Note_1/" title="random_alg_0">random_alg_0</a><time datetime="2023-05-28T04:40:27.000Z" title="Created 2023-05-28 12:40:27">2023-05-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/28/BUAA-OS-LAB0/" title="BUAA_OS_LAB0">BUAA_OS_LAB0</a><time datetime="2022-03-28T06:07:12.000Z" title="Created 2022-03-28 14:07:12">2022-03-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/28/BUAA-OO-U1/" title="BUAA_OO_U1"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUAA_OO_U1"/></a><div class="content"><a class="title" href="/2022/03/28/BUAA-OO-U1/" title="BUAA_OO_U1">BUAA_OO_U1</a><time datetime="2022-03-28T06:04:52.000Z" title="Created 2022-03-28 14:04:52">2022-03-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/05/oo-HW1/" title="oo_HW1"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="oo_HW1"/></a><div class="content"><a class="title" href="/2022/03/05/oo-HW1/" title="oo_HW1">oo_HW1</a><time datetime="2022-03-05T06:55:05.000Z" title="Created 2022-03-05 14:55:05">2022-03-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By emilyu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Local search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'fsRbCk8Nuy3KOqDFR3dATKLN-gzGzoHsz',
+      appKey: 'QcoBfjjHRbYoXsg5DnJhty93',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: {"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_親親":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再見":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_發怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_發財":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可愛":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_嘔吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_壞笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尷尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_驚嚇":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://emilyu2003.github.io/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/'
+    this.page.identifier = '2023/05/30/复杂性类/'
+    this.page.title = '复杂性类'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/%5Bobject%20Object%5D"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
