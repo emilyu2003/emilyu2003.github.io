@@ -143,269 +143,424 @@
     }
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/my_avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ylog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">matlab学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-02-18T10:36:36.000Z" title="Created 2022-02-18 18:36:36">2022-02-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-02-18T10:44:29.772Z" title="Updated 2022-02-18 18:44:29">2022-02-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">语言学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="matlab学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>matlab学习笔记</p>
-<h1 id="一-基础知识"><a href="#一-基础知识" class="headerlink" title="一   基础知识"></a>一   基础知识</h1><h3 id="常用数学函数"><a href="#常用数学函数" class="headerlink" title="常用数学函数"></a>常用数学函数</h3><ul>
-<li><p>sin如果是角度用sind</p>
-<ul>
-<li>如sin(pi/2) = sind(90)</li>
+<h1>一   基础知识</h1>
+<h3 id="常用数学函数">常用数学函数</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>sin如果是角度用sind</p>
+<ul class="lvl-2">
+<li class="lvl-4">如sin(pi/2) = sind(90)</li>
 </ul>
 </li>
-<li><p>abs可用来求实数的绝对值、复数的模、字符串的ASCII码值</p>
+<li class="lvl-2">
+<p>abs可用来求实数的绝对值、复数的模、字符串的ASCII码值</p>
 </li>
-<li><p>取整</p>
-<ul>
-<li>round：四舍五入</li>
-<li>ceil：向上</li>
-<li>floor：向下</li>
-<li>fix：舍去小数取整 </li>
+<li class="lvl-2">
+<p>取整</p>
+<ul class="lvl-2">
+<li class="lvl-4">round：四舍五入</li>
+<li class="lvl-4">ceil：向上</li>
+<li class="lvl-4">floor：向下</li>
+<li class="lvl-4">fix：舍去小数取整</li>
 </ul>
 </li>
-<li><p>%： rem(x, y)</p>
+<li class="lvl-2">
+<p>%： rem(x, y)</p>
 </li>
-<li><p>isprime(x)</p>
+<li class="lvl-2">
+<p>isprime(x)</p>
 </li>
-<li><p>标准函数名都是小写</p>
+<li class="lvl-2">
+<p>标准函数名都是小写</p>
 </li>
-<li><p>区分大小写</p>
+<li class="lvl-2">
+<p>区分大小写</p>
 </li>
-<li><p>预定义变量</p>
-<ul>
-<li>ans：默认复制变量</li>
-<li>NaN：画图时用于裁剪</li>
-<li>i和j：复数（注意！循环变量避让！）</li>
-<li>pi</li>
+<li class="lvl-2">
+<p>预定义变量</p>
+<ul class="lvl-2">
+<li class="lvl-4">ans：默认复制变量</li>
+<li class="lvl-4">NaN：画图时用于裁剪</li>
+<li class="lvl-4">i和j：复数（注意！循环变量避让！）</li>
+<li class="lvl-4">pi</li>
 </ul>
 </li>
-<li><p>变量的删除修改</p>
-<ul>
-<li><p>工作区改</p>
+<li class="lvl-2">
+<p>变量的删除修改</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>工作区改</p>
 </li>
-<li><p>who</p>
+<li class="lvl-4">
+<p>who</p>
 </li>
-<li><p>whos</p>
+<li class="lvl-4">
+<p>whos</p>
 </li>
-<li><p>.mat</p>
-<ul>
-<li>保存工作区变量的文件</li>
-<li>使用save和load命令</li>
+<li class="lvl-4">
+<p>.mat</p>
+<ul class="lvl-4">
+<li class="lvl-6">保存工作区变量的文件</li>
+<li class="lvl-6">使用save和load命令</li>
 </ul>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">save mydata a x		// a和x两个变量装入madata.mat中</span><br><span class="line">load mydata			// 从mydata.mat中取出变量</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>输出格式</p>
-<ul>
-<li>用format来定义</li>
-<li>目前已知rat是有理数</li>
-</ul>
-</li>
-</ul>
-<h3 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h3><ul>
-<li><strong>事实证明，下标从1开始</strong></li>
-<li>冒号表达式：<ul>
-<li>初始值:步长:终止值</li>
-<li>步长可省，忽略为1，此时只有一个冒号</li>
-</ul>
-</li>
-<li>linspace(第一个元素, 最后一个元素, 总数)<ul>
-<li>总数可省，自动产生100个元素 </li>
-</ul>
-</li>
-<li>结构矩阵<ul>
-<li>或许可以理解为结构体？</li>
-<li>结构矩阵元素.成员名 = 表达式</li>
-<li>可以分别是不同的类型，matlab会放弃给你都显示的</li>
-</ul>
-</li>
-<li>单元矩阵<ul>
-<li>每个元素就是由不同类型的数据组成的</li>
-<li>用{}括起来！</li>
-<li>直接写，不用想结构矩阵那样拆开分别赋值</li>
-</ul>
-</li>
-<li>矩阵元素引用<ul>
-<li>如果改动的位置比较大，超出了原来的矩阵大小，matlab会自动在扩大的地方填充0</li>
-<li>通过下标找元素，如A(x,y)</li>
-<li>通过序号引用：按内存顺序<ul>
-<li>序号 = sub2ind(要转换的行数和列数的向量size(A)，转换矩阵的元素行下标，转换矩阵元素的列下标)，后两者可以是矩阵，即多个元素都要转换：由下标换位序号</li>
-<li>[行下标, 列下标] = ind2sub(要转换的行数和列数的向量size(A), 序号)：序号换成下标</li>
-</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">save mydata a x		// a和x两个变量装入madata.mat中</span><br><span class="line">load mydata			// 从mydata.mat中取出变量</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li>子矩阵<ul>
-<li>A(i,:)：第i行</li>
-<li>A(i:i+m,:)：第i-i+m行</li>
-<li>A(:,j)：第j列</li>
-<li>A(i:i+n,k:k+m)：第i-i+n行且在k-k+m列中的元素</li>
-<li>当然，这里面都是冒号表达式，所以甚至可以写步长</li>
-<li>end用来代指最后一行/一列</li>
-</ul>
-</li>
-<li>删除元素<ul>
-<li>空矩阵：x = []</li>
-<li>删除方法：赋值为空矩阵</li>
-<li>删除后矩阵会缩小的</li>
-</ul>
-</li>
-<li>reshape(矩阵，行数，列数)：总元素不变，改行数列数，存储顺序不变   </li>
-<li>堆叠元素：A(:)，使之成为一个列向量，实践证明是按列展开的，不是按存储顺序</li>
-</ul>
-<h3 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h3><ul>
-<li>在矩阵意义下的运算</li>
-<li>算数运算<ul>
-<li>标量可以和矩阵运算，此时标量作用于矩阵中每一个数</li>
-<li>除法：右除( $ B*A^{-1} $ )、左除(A^{-1}*B)</li>
-<li>乘方：A^x，注意A是方阵，x是标量！</li>
-<li>点运算：<ul>
-<li>.*：对应元素做乘法运算</li>
-<li>./：点右除</li>
-<li>.\：点左除    </li>
-<li>.^：点乘方</li>
+<li class="lvl-2">
+<p>输出格式</p>
+<ul class="lvl-2">
+<li class="lvl-4">用format来定义</li>
+<li class="lvl-4">目前已知rat是有理数</li>
 </ul>
 </li>
 </ul>
+<h3 id="矩阵运算">矩阵运算</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>事实证明，下标从1开始</strong></p>
 </li>
-<li>关系运算<ul>
-<li>~=：不等于</li>
-<li>矩阵和矩阵相比是按位置比较，得到一个矩阵</li>
-<li>标量和矩阵比则标量和每一个矩阵元素比，也得到一个矩阵</li>
+<li class="lvl-2">
+<p>冒号表达式：</p>
+<ul class="lvl-2">
+<li class="lvl-4">初始值:步长:终止值</li>
+<li class="lvl-4">步长可省，忽略为1，此时只有一个冒号</li>
 </ul>
 </li>
-<li>逻辑运算<ul>
-<li>比较方法同上</li>
+<li class="lvl-2">
+<p>linspace(第一个元素, 最后一个元素, 总数)</p>
+<ul class="lvl-2">
+<li class="lvl-4">总数可省，自动产生100个元素</li>
 </ul>
 </li>
-</ul>
-<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
-<li>单引号</li>
-<li>字符串即一个行向量</li>
-<li>用两个单引号表示字符串中的单引号</li>
-<li>可以形成字符串矩阵，但需要保证列数相同</li>
-<li>eval(s)：把字符串内容作为指令执行</li>
-<li>可以用char()和abs()/double()在ASCII和字符串之间转换</li>
-<li>可以比较，得到一个同样大小的矩阵/向量<ul>
-<li>strcmp(s1,s2)：相等返回1</li>
-<li>strncmp(s1,s2,n)：前n个字符相等返回1</li>
-<li>strcmpi(s1,s2)：忽略大小写，相等返回1</li>
-<li>strncmpi(s1,s2,n)：忽略大小写，前n个字符相等返回1</li>
+<li class="lvl-2">
+<p>结构矩阵</p>
+<ul class="lvl-2">
+<li class="lvl-4">或许可以理解为结构体？</li>
+<li class="lvl-4">结构矩阵元素.成员名 = 表达式</li>
+<li class="lvl-4">可以分别是不同的类型，matlab会放弃给你都显示的</li>
 </ul>
 </li>
-<li>findstr(s1, s2)：返回短字符串在成字符串中的开始位置</li>
-<li>strrep(s1,s2,s3)：将字符串s1中的左右子字符串s2替换为s3，区分大小写！</li>
+<li class="lvl-2">
+<p>单元矩阵</p>
+<ul class="lvl-2">
+<li class="lvl-4">每个元素就是由不同类型的数据组成的</li>
+<li class="lvl-4">用{}括起来！</li>
+<li class="lvl-4">直接写，不用想结构矩阵那样拆开分别赋值</li>
 </ul>
-<h1 id="二-矩阵处理"><a href="#二-矩阵处理" class="headerlink" title="二   矩阵处理"></a>二   矩阵处理</h1><h3 id="特殊矩阵"><a href="#特殊矩阵" class="headerlink" title="特殊矩阵"></a>特殊矩阵</h3><ul>
-<li><p>zeros：全零</p>
 </li>
-<li><p>ones：全一</p>
-</li>
-<li><p>eye：对角线为1（方阵即单位矩阵，可以不是方阵，从左上角开始为1）</p>
-</li>
-<li><p>rand：（0,1）区间均匀分布的随机矩阵</p>
-</li>
-<li><p>randn：~N(0,1)</p>
-</li>
-<li><p>可以使用函数(size(A))这种形式</p>
-</li>
-<li><p>magic(n)：幻方</p>
-</li>
-<li><p>vander(V)：以V为基础的范德蒙矩阵</p>
-</li>
-<li><p>hilb(n)：希尔伯特矩阵，H(i,j) = 1/(i+j-1)</p>
-</li>
-<li><p>compan(p)：p是一个多项式的系数向量，伴随矩阵</p>
-</li>
-<li><p>pascal(5)：帕斯卡矩阵，p(i,j)=p(i,j-1)+p(i-1,j)    </p>
-</li>
-</ul>
-<h3 id="矩阵变换"><a href="#矩阵变换" class="headerlink" title="矩阵变换"></a>矩阵变换</h3><ul>
-<li><p>diag(A,k)：提出矩阵A第K条对角线上的元素，右上为正，左下为负，主对角线为0（此时k可省略）</p>
-</li>
-<li><p>diag(V,k)：以向量V为第k条对角线元素，产生对角矩阵，k为0即主对角线时可省略</p>
-</li>
-<li><p>triu(A,k)：上三角阵，提取第k条及右上的元素，k为0时可省略</p>
-</li>
-<li><p>tril(A,k)：同理</p>
-</li>
-<li><p>A.’：转置</p>
-</li>
-<li><p>A’：共轭转置（用于复数）</p>
-</li>
-<li><p>rot90(A,k)：将矩阵A逆时针方向旋转90°的k倍，k为1时可省略</p>
-</li>
-<li><p>fliplr(A)：左右翻转</p>
-</li>
-<li><p>flipud(A)：上下翻转</p>
-</li>
-<li><p>inv：逆矩阵</p>
-</li>
-<li><p>方程求解</p>
-<ul>
-<li>A是系数矩阵，B是常数向量，用x=A\b可解</li>
-<li>也可用x = inv(A)*b,这里就是说Ax=b的意思，其实两种都一样</li>
+<li class="lvl-2">
+<p>矩阵元素引用</p>
+<ul class="lvl-2">
+<li class="lvl-4">如果改动的位置比较大，超出了原来的矩阵大小，matlab会自动在扩大的地方填充0</li>
+<li class="lvl-4">通过下标找元素，如A(x,y)</li>
+<li class="lvl-4">通过序号引用：按内存顺序
+<ul class="lvl-4">
+<li class="lvl-6">序号 = sub2ind(要转换的行数和列数的向量size(A)，转换矩阵的元素行下标，转换矩阵元素的列下标)，后两者可以是矩阵，即多个元素都要转换：由下标换位序号</li>
+<li class="lvl-6">[行下标, 列下标] = ind2sub(要转换的行数和列数的向量size(A), 序号)：序号换成下标</li>
 </ul>
 </li>
 </ul>
-<h3 id="矩阵求值"><a href="#矩阵求值" class="headerlink" title="矩阵求值"></a>矩阵求值</h3><ul>
-<li><p>det(A)：方阵A对应行列式</p>
 </li>
-<li><p>rank(A)；秩</p>
-</li>
-<li><p>trace(A)：迹（对角线元素之和）</p>
-</li>
-<li><p>范数</p>
-<ul>
-<li>norm(V,2)：向量V的1——范数（向量元素的绝对值之和，2可省略）</li>
-<li>norm(V,1)：向量V的2——范数（向量元素平方和的平方根）</li>
-<li>norm(V,inf)：向量V的$\infty$——范数（所有向量元素绝对值中的最大值）</li>
+<li class="lvl-2">
+<p>子矩阵</p>
+<ul class="lvl-2">
+<li class="lvl-4">A(i,:)：第i行</li>
+<li class="lvl-4">A(i:i+m,:)：第i-i+m行</li>
+<li class="lvl-4">A(:,j)：第j列</li>
+<li class="lvl-4">A(i:i+n,k:k+m)：第i-i+n行且在k-k+m列中的元素</li>
+<li class="lvl-4">当然，这里面都是冒号表达式，所以甚至可以写步长</li>
+<li class="lvl-4">end用来代指最后一行/一列</li>
 </ul>
 </li>
-<li><p>条件数</p>
-<ul>
-<li>矩阵A的条件数 = A的范数*A的逆矩阵范数</li>
-<li>越接近1，性能越好</li>
-<li>cond(A,1)：矩阵A的1——范数下的条件数</li>
-<li>cond(A,2)：矩阵A的2——范数下的条件数，2可省略</li>
-<li>cond(A,inf)：矩阵A的$\infty$——范数下的条件数</li>
+<li class="lvl-2">
+<p>删除元素</p>
+<ul class="lvl-2">
+<li class="lvl-4">空矩阵：x = []</li>
+<li class="lvl-4">删除方法：赋值为空矩阵</li>
+<li class="lvl-4">删除后矩阵会缩小的</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>reshape(矩阵，行数，列数)：总元素不变，改行数列数，存储顺序不变</p>
+</li>
+<li class="lvl-2">
+<p>堆叠元素：A(😃，使之成为一个列向量，实践证明是按列展开的，不是按存储顺序</p>
+</li>
+</ul>
+<h3 id="基本运算">基本运算</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>在矩阵意义下的运算</p>
+</li>
+<li class="lvl-2">
+<p>算数运算</p>
+<ul class="lvl-2">
+<li class="lvl-4">标量可以和矩阵运算，此时标量作用于矩阵中每一个数</li>
+<li class="lvl-4">除法：右除( <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>∗</mo><msup><mi>A</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex"> B*A^{-1} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span> )、左除(A^{-1}*B)</li>
+<li class="lvl-4">乘方：A^x，注意A是方阵，x是标量！</li>
+<li class="lvl-4">点运算：
+<ul class="lvl-4">
+<li class="lvl-6">.*：对应元素做乘法运算</li>
+<li class="lvl-6">./：点右除</li>
+<li class="lvl-6">.\：点左除</li>
+<li class="lvl-6">.^：点乘方</li>
 </ul>
 </li>
 </ul>
-<h3 id="矩阵特征值"><a href="#矩阵特征值" class="headerlink" title="矩阵特征值"></a>矩阵特征值</h3><ul>
-<li>$ Ax = \lambda x $</li>
-<li>E = eig(A)</li>
-<li>[X, D] = eig(A)，X是各列对应的特征向量，D是X的各列的特征值</li>
+</li>
+<li class="lvl-2">
+<p>关系运算</p>
+<ul class="lvl-2">
+<li class="lvl-4">~=：不等于</li>
+<li class="lvl-4">矩阵和矩阵相比是按位置比较，得到一个矩阵</li>
+<li class="lvl-4">标量和矩阵比则标量和每一个矩阵元素比，也得到一个矩阵</li>
 </ul>
-<h3 id="稀疏矩阵"><a href="#稀疏矩阵" class="headerlink" title="稀疏矩阵"></a>稀疏矩阵</h3><ul>
-<li>A = sparse(S)，将S转化为稀疏存储方式的矩阵</li>
-<li>S = full(A)，将A转化为完全存储方式的矩阵</li>
-<li>sparse(u, v, S)：uvS等长，S为要存储的非零元素，(u,v)是坐标</li>
-<li>带状稀疏矩阵：<ul>
-<li>[B,d] = spdiags(A)，从A中提取全部非零对角线得到B，位置向量得到d</li>
-<li>A = spdiags(B, d, m, n)，上述的操作反过来</li>
+</li>
+<li class="lvl-2">
+<p>逻辑运算</p>
+<ul class="lvl-2">
+<li class="lvl-4">比较方法同上</li>
 </ul>
 </li>
 </ul>
-<h3 id="程设"><a href="#程设" class="headerlink" title="程设"></a>程设</h3><ul>
-<li>注意运行脚本文件的时候，matlab需要在那个目录下才行，要不然无法实现</li>
-<li>input();</li>
-<li>disp();</li>
-<li>匿名函数：函数句柄变量 = @(匿名函数输入参数)匿名表达式</li>
+<h3 id="字符串">字符串</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>单引号</p>
+</li>
+<li class="lvl-2">
+<p>字符串即一个行向量</p>
+</li>
+<li class="lvl-2">
+<p>用两个单引号表示字符串中的单引号</p>
+</li>
+<li class="lvl-2">
+<p>可以形成字符串矩阵，但需要保证列数相同</p>
+</li>
+<li class="lvl-2">
+<p>eval(s)：把字符串内容作为指令执行</p>
+</li>
+<li class="lvl-2">
+<p>可以用char()和abs()/double()在ASCII和字符串之间转换</p>
+</li>
+<li class="lvl-2">
+<p>可以比较，得到一个同样大小的矩阵/向量</p>
+<ul class="lvl-2">
+<li class="lvl-4">strcmp(s1,s2)：相等返回1</li>
+<li class="lvl-4">strncmp(s1,s2,n)：前n个字符相等返回1</li>
+<li class="lvl-4">strcmpi(s1,s2)：忽略大小写，相等返回1</li>
+<li class="lvl-4">strncmpi(s1,s2,n)：忽略大小写，前n个字符相等返回1</li>
 </ul>
-<h3 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h3><ul>
-<li>plot(x, y)</li>
-<li>plot(x)，其中横坐标为1,2,3,4,…</li>
-<li>fplot(f, lims, 选项)</li>
-<li>fplot(funx, funy, tlims, 选项)</li>
-<li>title(图形标题)</li>
-<li>xlable()和ylable()</li>
-<li>text(x, y, 说明)</li>
-<li>gtext(说明)，用鼠标定位</li>
-<li>legend(图例1，图例2，…)</li>
-<li>axis([xmin, xmax, ymin, ymax, zmin, zmax])</li>
-<li>hold on / hold off / hold</li>
-<li>subplot(n, m, p)，n行m列，第p张图</li>
+</li>
+<li class="lvl-2">
+<p>findstr(s1, s2)：返回短字符串在成字符串中的开始位置</p>
+</li>
+<li class="lvl-2">
+<p>strrep(s1,s2,s3)：将字符串s1中的左右子字符串s2替换为s3，区分大小写！</p>
+</li>
 </ul>
-<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><h6 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h6><p>目标：$ min{ c^T\cdot x } $<br>s.t.<br>$ Ax &lt;= b $<br>$ Aeq\cdot x = beq $<br>$ lb &lt;= x &lt;= ub $</p>
+<h1>二   矩阵处理</h1>
+<h3 id="特殊矩阵">特殊矩阵</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>zeros：全零</p>
+</li>
+<li class="lvl-2">
+<p>ones：全一</p>
+</li>
+<li class="lvl-2">
+<p>eye：对角线为1（方阵即单位矩阵，可以不是方阵，从左上角开始为1）</p>
+</li>
+<li class="lvl-2">
+<p>rand：（0,1）区间均匀分布的随机矩阵</p>
+</li>
+<li class="lvl-2">
+<p>randn：~N(0,1)</p>
+</li>
+<li class="lvl-2">
+<p>可以使用函数(size(A))这种形式</p>
+</li>
+<li class="lvl-2">
+<p>magic(n)：幻方</p>
+</li>
+<li class="lvl-2">
+<p>vander(V)：以V为基础的范德蒙矩阵</p>
+</li>
+<li class="lvl-2">
+<p>hilb(n)：希尔伯特矩阵，H(i,j) = 1/(i+j-1)</p>
+</li>
+<li class="lvl-2">
+<p>compan(p)：p是一个多项式的系数向量，伴随矩阵</p>
+</li>
+<li class="lvl-2">
+<p>pascal(5)：帕斯卡矩阵，p(i,j)=p(i,j-1)+p(i-1,j)</p>
+</li>
+</ul>
+<h3 id="矩阵变换">矩阵变换</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>diag(A,k)：提出矩阵A第K条对角线上的元素，右上为正，左下为负，主对角线为0（此时k可省略）</p>
+</li>
+<li class="lvl-2">
+<p>diag(V,k)：以向量V为第k条对角线元素，产生对角矩阵，k为0即主对角线时可省略</p>
+</li>
+<li class="lvl-2">
+<p>triu(A,k)：上三角阵，提取第k条及右上的元素，k为0时可省略</p>
+</li>
+<li class="lvl-2">
+<p>tril(A,k)：同理</p>
+</li>
+<li class="lvl-2">
+<p>A.'：转置</p>
+</li>
+<li class="lvl-2">
+<p>A’：共轭转置（用于复数）</p>
+</li>
+<li class="lvl-2">
+<p>rot90(A,k)：将矩阵A逆时针方向旋转90°的k倍，k为1时可省略</p>
+</li>
+<li class="lvl-2">
+<p>fliplr(A)：左右翻转</p>
+</li>
+<li class="lvl-2">
+<p>flipud(A)：上下翻转</p>
+</li>
+<li class="lvl-2">
+<p>inv：逆矩阵</p>
+</li>
+<li class="lvl-2">
+<p>方程求解</p>
+<ul class="lvl-2">
+<li class="lvl-4">A是系数矩阵，B是常数向量，用x=A\b可解</li>
+<li class="lvl-4">也可用x = inv(A)*b,这里就是说Ax=b的意思，其实两种都一样</li>
+</ul>
+</li>
+</ul>
+<h3 id="矩阵求值">矩阵求值</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>det(A)：方阵A对应行列式</p>
+</li>
+<li class="lvl-2">
+<p>rank(A)；秩</p>
+</li>
+<li class="lvl-2">
+<p>trace(A)：迹（对角线元素之和）</p>
+</li>
+<li class="lvl-2">
+<p>范数</p>
+<ul class="lvl-2">
+<li class="lvl-4">norm(V,2)：向量V的1——范数（向量元素的绝对值之和，2可省略）</li>
+<li class="lvl-4">norm(V,1)：向量V的2——范数（向量元素平方和的平方根）</li>
+<li class="lvl-4">norm(V,inf)：向量V的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">∞</span></span></span></span>——范数（所有向量元素绝对值中的最大值）</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>条件数</p>
+<ul class="lvl-2">
+<li class="lvl-4">矩阵A的条件数 = A的范数*A的逆矩阵范数</li>
+<li class="lvl-4">越接近1，性能越好</li>
+<li class="lvl-4">cond(A,1)：矩阵A的1——范数下的条件数</li>
+<li class="lvl-4">cond(A,2)：矩阵A的2——范数下的条件数，2可省略</li>
+<li class="lvl-4">cond(A,inf)：矩阵A的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">∞</span></span></span></span>——范数下的条件数</li>
+</ul>
+</li>
+</ul>
+<h3 id="矩阵特征值">矩阵特征值</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>=</mo><mi>λ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex"> Ax = \lambda x </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span><span class="mord mathnormal">x</span></span></span></span></p>
+</li>
+<li class="lvl-2">
+<p>E = eig(A)</p>
+</li>
+<li class="lvl-2">
+<p>[X, D] = eig(A)，X是各列对应的特征向量，D是X的各列的特征值</p>
+</li>
+</ul>
+<h3 id="稀疏矩阵">稀疏矩阵</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>A = sparse(S)，将S转化为稀疏存储方式的矩阵</p>
+</li>
+<li class="lvl-2">
+<p>S = full(A)，将A转化为完全存储方式的矩阵</p>
+</li>
+<li class="lvl-2">
+<p>sparse(u, v, S)：uvS等长，S为要存储的非零元素，(u,v)是坐标</p>
+</li>
+<li class="lvl-2">
+<p>带状稀疏矩阵：</p>
+<ul class="lvl-2">
+<li class="lvl-4">[B,d] = spdiags(A)，从A中提取全部非零对角线得到B，位置向量得到d</li>
+<li class="lvl-4">A = spdiags(B, d, m, n)，上述的操作反过来</li>
+</ul>
+</li>
+</ul>
+<h3 id="程设">程设</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>注意运行脚本文件的时候，matlab需要在那个目录下才行，要不然无法实现</p>
+</li>
+<li class="lvl-2">
+<p>input();</p>
+</li>
+<li class="lvl-2">
+<p>disp();</p>
+</li>
+<li class="lvl-2">
+<p>匿名函数：函数句柄变量 = @(匿名函数输入参数)匿名表达式</p>
+</li>
+</ul>
+<h3 id="绘图">绘图</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>plot(x, y)</p>
+</li>
+<li class="lvl-2">
+<p>plot(x)，其中横坐标为1,2,3,4,…</p>
+</li>
+<li class="lvl-2">
+<p>fplot(f, lims, 选项)</p>
+</li>
+<li class="lvl-2">
+<p>fplot(funx, funy, tlims, 选项)</p>
+</li>
+<li class="lvl-2">
+<p>title(图形标题)</p>
+</li>
+<li class="lvl-2">
+<p>xlable()和ylable()</p>
+</li>
+<li class="lvl-2">
+<p>text(x, y, 说明)</p>
+</li>
+<li class="lvl-2">
+<p>gtext(说明)，用鼠标定位</p>
+</li>
+<li class="lvl-2">
+<p>legend(图例1，图例2，…)</p>
+</li>
+<li class="lvl-2">
+<p>axis([xmin, xmax, ymin, ymax, zmin, zmax])</p>
+</li>
+<li class="lvl-2">
+<p>hold on / hold off / hold</p>
+</li>
+<li class="lvl-2">
+<p>subplot(n, m, p)，n行m列，第p张图</p>
+</li>
+</ul>
+<h3 id="算法">算法</h3>
+<h6 id="线性规划">线性规划</h6>
+<p>目标：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mi>i</mi><mi>n</mi><mrow><msup><mi>c</mi><mi>T</mi></msup><mo>⋅</mo><mi>x</mi></mrow></mrow><annotation encoding="application/x-tex"> min{ c^T\cdot x } </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8413em;"></span><span class="mord mathnormal">min</span><span class="mord"><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal">x</span></span></span></span></span><br>
+s.t.<br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>x</mi><mo>&lt;</mo><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex"> Ax &lt;= b </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>e</mi><mi>q</mi><mo>⋅</mo><mi>x</mi><mo>=</mo><mi>b</mi><mi>e</mi><mi>q</mi></mrow><annotation encoding="application/x-tex"> Aeq\cdot x = beq </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>b</mi><mo>&lt;</mo><mo>=</mo><mi>x</mi><mo>&lt;</mo><mo>=</mo><mi>u</mi><mi>b</mi></mrow><annotation encoding="application/x-tex"> lb &lt;= x &lt;= ub </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">u</span><span class="mord mathnormal">b</span></span></span></span></p>
 <p>代码实现：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[x, fval] = <span class="built_in">linprog</span>(c, A, b)</span><br><span class="line">[x, fval] = <span class="built_in">linprog</span>(c, A, b, Aeq, beq)</span><br><span class="line">[x, fval] = <span class="built_in">linprog</span>(c, A, b, Aeq, beq, lb, ub)</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">emilyu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://emilyu2003.github.io/2022/02/18/matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://emilyu2003.github.io/2022/02/18/matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/matlab/">matlab</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/26/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/"><img class="prev-cover" src="/2022/02/26/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/java.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">java学习笔记2</div></div></a></div><div class="next-post pull-right"><a href="/2022/02/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/"><img class="next-cover" src="/2022/02/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/java.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">java学习笔记1</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/my_avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">emilyu</div><div class="author-info__description">秃头歪三的废话坞</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/emilyu2003"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">这个人很懒 留下了很多废话</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">一   基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.1.</span> <span class="toc-text">常用数学函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-number">1.0.2.</span> <span class="toc-text">矩阵运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="toc-number">1.0.3.</span> <span class="toc-text">基本运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.0.4.</span> <span class="toc-text">字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E7%9F%A9%E9%98%B5%E5%A4%84%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">二   矩阵处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5"><span class="toc-number">2.0.1.</span> <span class="toc-text">特殊矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2"><span class="toc-number">2.0.2.</span> <span class="toc-text">矩阵变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E5%80%BC"><span class="toc-number">2.0.3.</span> <span class="toc-text">矩阵求值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%89%B9%E5%BE%81%E5%80%BC"><span class="toc-number">2.0.4.</span> <span class="toc-text">矩阵特征值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5"><span class="toc-number">2.0.5.</span> <span class="toc-text">稀疏矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E8%AE%BE"><span class="toc-number">2.0.6.</span> <span class="toc-text">程设</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%9B%BE"><span class="toc-number">2.0.7.</span> <span class="toc-text">绘图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">2.0.8.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92"><span class="toc-number">2.0.8.0.0.1.</span> <span class="toc-text">线性规划</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/26/Unity%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E9%93%BE%E5%AE%89%E8%A3%85/" title="Unity3D相关工具链安装笔记">Unity3D相关工具链安装笔记</a><time datetime="2023-12-26T06:37:23.000Z" title="Created 2023-12-26 14:37:23">2023-12-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/" title="复杂性类">复杂性类</a><time datetime="2023-05-30T05:34:51.000Z" title="Created 2023-05-30 13:34:51">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/28/rand_Alg_Note_1/" title="random_alg_0">random_alg_0</a><time datetime="2023-05-28T04:40:27.000Z" title="Created 2023-05-28 12:40:27">2023-05-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/28/BUAA-OS-LAB0/" title="BUAA_OS_LAB0">BUAA_OS_LAB0</a><time datetime="2022-03-28T06:07:12.000Z" title="Created 2022-03-28 14:07:12">2022-03-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/28/BUAA-OO-U1/" title="BUAA_OO_U1"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUAA_OO_U1"/></a><div class="content"><a class="title" href="/2022/03/28/BUAA-OO-U1/" title="BUAA_OO_U1">BUAA_OO_U1</a><time datetime="2022-03-28T06:04:52.000Z" title="Created 2022-03-28 14:04:52">2022-03-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By emilyu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Local search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[x, fval] = <span class="built_in">linprog</span>(c, A, b)</span><br><span class="line">[x, fval] = <span class="built_in">linprog</span>(c, A, b, Aeq, beq)</span><br><span class="line">[x, fval] = <span class="built_in">linprog</span>(c, A, b, Aeq, beq, lb, ub)</span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">emilyu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://emilyu2003.github.io/2022/02/18/matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://emilyu2003.github.io/2022/02/18/matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/matlab/">matlab</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/26/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/"><img class="prev-cover" src="/2022/02/26/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/java.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">java学习笔记2</div></div></a></div><div class="next-post pull-right"><a href="/2022/02/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/"><img class="next-cover" src="/2022/02/15/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/java.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">java学习笔记1</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/my_avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">emilyu</div><div class="author-info__description">秃头歪三的废话坞</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">14</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/emilyu2003"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">这个人很懒 留下了很多废话</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">一   基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.1.</span> <span class="toc-text">常用数学函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-number">1.0.2.</span> <span class="toc-text">矩阵运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="toc-number">1.0.3.</span> <span class="toc-text">基本运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.0.4.</span> <span class="toc-text">字符串</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">二   矩阵处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5"><span class="toc-number">2.0.1.</span> <span class="toc-text">特殊矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%98%E6%8D%A2"><span class="toc-number">2.0.2.</span> <span class="toc-text">矩阵变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E5%80%BC"><span class="toc-number">2.0.3.</span> <span class="toc-text">矩阵求值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%89%B9%E5%BE%81%E5%80%BC"><span class="toc-number">2.0.4.</span> <span class="toc-text">矩阵特征值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5"><span class="toc-number">2.0.5.</span> <span class="toc-text">稀疏矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E8%AE%BE"><span class="toc-number">2.0.6.</span> <span class="toc-text">程设</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%98%E5%9B%BE"><span class="toc-number">2.0.7.</span> <span class="toc-text">绘图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">2.0.8.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92"><span class="toc-number">2.0.8.0.0.1.</span> <span class="toc-text">线性规划</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/26/Unity%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E9%93%BE%E5%AE%89%E8%A3%85/" title="Unity3D相关工具链安装笔记">Unity3D相关工具链安装笔记</a><time datetime="2023-12-26T06:37:23.000Z" title="Created 2023-12-26 14:37:23">2023-12-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/" title="复杂性类">复杂性类</a><time datetime="2023-05-30T05:34:51.000Z" title="Created 2023-05-30 13:34:51">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/28/rand_Alg_Note_1/" title="random_alg_0">random_alg_0</a><time datetime="2023-05-28T04:40:27.000Z" title="Created 2023-05-28 12:40:27">2023-05-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/28/BUAA-OS-LAB0/" title="BUAA_OS_LAB0">BUAA_OS_LAB0</a><time datetime="2022-03-28T06:07:12.000Z" title="Created 2022-03-28 14:07:12">2022-03-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/28/BUAA-OO-U1/" title="BUAA_OO_U1"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BUAA_OO_U1"/></a><div class="content"><a class="title" href="/2022/03/28/BUAA-OO-U1/" title="BUAA_OO_U1">BUAA_OO_U1</a><time datetime="2022-03-28T06:04:52.000Z" title="Created 2022-03-28 14:04:52">2022-03-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By emilyu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Local search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")
