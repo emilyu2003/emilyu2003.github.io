@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>电子舞曲手册读书笔记（一） | Ylog</title><meta name="author" content="emilyu"><meta name="copyright" content="emilyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="– 电子舞曲手册 压控振荡器（VCO） 正弦波   只有基频   没有谐波分量   方波   模拟电路最容易生成的波形   这种波形只有奇次谐波，因此音色柔和而空洞   方波特别适合用来模仿木管乐器，为弦乐和 Pad 音色增加宽度，或制作深邃宽广的贝司音色   脉冲波   脉冲波可以调整高低电平的宽度，从而改变声音的谐波成分   除了宽广柔和的方波音色之外，还能制作出类似簧管的轻薄音色。   锯齿">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电子舞曲手册读书笔记（一）">
+<meta property="og:url" content="https://emilyu2003.github.io/2024/01/09/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Ylog">
+<meta property="og:description" content="– 电子舞曲手册 压控振荡器（VCO） 正弦波   只有基频   没有谐波分量   方波   模拟电路最容易生成的波形   这种波形只有奇次谐波，因此音色柔和而空洞   方波特别适合用来模仿木管乐器，为弦乐和 Pad 音色增加宽度，或制作深邃宽广的贝司音色   脉冲波   脉冲波可以调整高低电平的宽度，从而改变声音的谐波成分   除了宽广柔和的方波音色之外，还能制作出类似簧管的轻薄音色。   锯齿">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2024-01-09T03:15:25.000Z">
+<meta property="article:modified_time" content="2024-01-09T03:22:01.242Z">
+<meta property="article:author" content="emilyu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://emilyu2003.github.io/2024/01/09/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '电子舞曲手册读书笔记（一）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-01-09 11:22:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/my_avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ylog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">电子舞曲手册读书笔记（一）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-01-09T03:15:25.000Z" title="Created 2024-01-09 11:15:25">2024-01-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-01-09T03:22:01.242Z" title="Updated 2024-01-09 11:22:01">2024-01-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="电子舞曲手册读书笔记（一）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>–</p>
+<h1>电子舞曲手册</h1>
+<h2 id="压控振荡器（VCO）">压控振荡器（VCO）</h2>
+<h3 id="正弦波">正弦波</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>只有基频</p>
+</li>
+<li class="lvl-2">
+<p>没有谐波分量</p>
+</li>
+</ul>
+<h3 id="方波">方波</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>模拟电路最容易生成的波形</p>
+</li>
+<li class="lvl-2">
+<p>这种波形只有奇次谐波，因此音色柔和而空洞</p>
+</li>
+<li class="lvl-2">
+<p>方波特别适合用来模仿木管乐器，为弦乐和 Pad 音色增加宽度，或制作深邃宽广的贝司音色</p>
+</li>
+</ul>
+<h3 id="脉冲波">脉冲波</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>脉冲波可以调整高低电平的宽度，从而改变声音的谐波成分</p>
+</li>
+<li class="lvl-2">
+<p>除了宽广柔和的方波音色之外，还能制作出类似簧管的轻薄音色。</p>
+</li>
+</ul>
+<h3 id="锯齿波">锯齿波</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>锯齿波能够产生连续的奇次和偶次谐波，这种明亮的音色非常适合制作很“铜管”、很粗糙的音色</p>
+</li>
+<li class="lvl-2">
+<p>它还适合制作明亮且有质感的主奏以及脏贝司音色</p>
+</li>
+<li class="lvl-2">
+<p>由于其丰富的谐波，因此制作人往往把它添加到音色中并进行滤波</p>
+</li>
+</ul>
+<h3 id="三角波">三角波</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>三角波形拥有两条线性斜率线，由于只包含奇次谐波（分波），所以没有锯齿波的谐波丰富</p>
+</li>
+<li class="lvl-2">
+<p>这种波形往往和正弦波、方波或脉冲波混合在一起，为音色增加明亮生动的感觉</p>
+</li>
+<li class="lvl-2">
+<p>三角波还常常用在Pad音色中增加质感</p>
+</li>
+</ul>
+<h3 id="噪声波">噪声波</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>噪波与其他 5 种波形都不同，因为它产生的是全频带的随机混合，没有实际音高</p>
+</li>
+<li class="lvl-2">
+<p>根据混合频率的能量分布，噪波可以分为“粉红噪声”和“白”噪声</p>
+<ul class="lvl-2">
+<li class="lvl-6">白噪声在全频带范围内具有相等的能量，类似于收音机中的杂讯</li>
+<li class="lvl-6">粉红噪声在每个倍频程内具有相同的能量，因此产生出更厚重的嘶声</li>
+</ul>
+</li>
+</ul>
+<h2 id="滤波器">滤波器</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>低通</p>
+</li>
+<li class="lvl-2">
+<p>高通：去低频，只剩谐波（trance的lead）</p>
+</li>
+<li class="lvl-2">
+<p>带通：薄</p>
+</li>
+<li class="lvl-2">
+<p>带阻：将声音变薄的同时完好无损地保留基频，这样制作出的音色既有明显的音高分别，又不含有很高能量的谐波成分</p>
+</li>
+<li class="lvl-2">
+<p>梳状：在很多模拟和DSP建模合成器中，如果把共鸣值调得足够高就会产生回授…(Feedback)。随着回授信号的增加，直到信号越来越多最终达到自激。这种自激能产生与截止频率相等的正弦波信号，而这个正弦波往往要比由振荡器产生的更纯净。由于这个原因，自激滤波器往往用来制作下潜深厚且力度十足的超低音，特别适合Drum n’Bass和说唱风格。</p>
+</li>
+<li class="lvl-2">
+<p>音高跟随</p>
+</li>
+</ul>
+<h2 id="放大器">放大器</h2>
+
+<h2 id="调节器">调节器</h2>
+<h3 id="LFO">LFO</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>低频振荡器</p>
+</li>
+<li class="lvl-2">
+<p>1-10hz（人听不到）</p>
+</li>
+<li class="lvl-2">
+<p>比如，如果把 LFO 频率设置得较高例如5Hz，并用来调制VCO的音高参数，那么振荡器的音高将根据LFO 波形的速度和形状上下起伏，产生一种类似颠音的效果。如果 LFO 的波形是正弦波，那么将会产生出类似警笛呼啸的效果。或者，如果同样的LFO 用来调制滤波器的截止点，那么滤波器就将根据LFO 的速度交替开关，而如果用来调制振荡器的音量，那么音量的上下起伏就将制造出震音的效果。</p>
+</li>
+</ul>
+<h2 id="压缩器">压缩器</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>阈值（threshold）</p>
+</li>
+<li class="lvl-2">
+<p>压缩比（ratio）</p>
+</li>
+<li class="lvl-2">
+<p>attack / release</p>
+</li>
+<li class="lvl-2">
+<p>拐点（soft / hard knee）</p>
+</li>
+<li class="lvl-2">
+<p>峰值 / 平均值（peak / RMS）</p>
+</li>
+<li class="lvl-2">
+<p>侧链</p>
+</li>
+<li class="lvl-2">
+<p>无论压缩器拥有哪些控制参数，在录音时的设置都相对简单。在开始时将压缩比设置为 4:1，然后慢慢降低闻值使信号最响部分的增益衰减保持在-8dB~10dB。把开启时间设置到最快并以释放时间设置为约500ms。在此基础上，进一步调整以找到适合具体音色的设置方法。</p>
+</li>
+<li class="lvl-2">
+<p>gain pumping</p>
+</li>
+<li class="lvl-2">
+<p>此外，由于高于闽值的声音电平都将被衰减，因此低于闯值的信号将被提升。尽管这能够增加信号的整体电平，但压缩却无法分辨有用的乐音和无用的噪声。15dB的增益衰减不但会将峰值衰减15dB，也会将小信号。使用提升增益将峰值重新提升到标准电平(比如15dB)，则所有低于值的信号司样提升 15dB。如果录音中本来就含有噪声，那么可能会更加明显。（这个好像是我之前遇到的问题）</p>
+</li>
+</ul>
+<h2 id="混响">混响</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>干湿比（ratio / mix）</p>
+</li>
+<li class="lvl-2">
+<p>扩散</p>
+</li>
+<li class="lvl-2">
+<p>密度</p>
+</li>
+</ul>
+<h2 id="移相（phaser）和镶边（flanger）">移相（phaser）和镶边（flanger）</h2>
+<p>移相和镶边都使用了低频振荡器来调制移相和延时。原始信号与延时信号之间的相位差会产生一连串的相位抵消。得到的效果是移相效果器会在声音上产生一连串谐波相关(也就是与原始信号相位相关)的声陷;而由于使用了延时电路，镶边会产生持续变化的频率，因此镶边和移相具有相同的参数。它们都用速率参数来控制LFO的速度，用反馈(Feedback)参数来控制LFO的效果深度。注意，有些移相器只能使用正弦波做调制源，而大部分镜边器不仅能改变LFO的波形，还可以控制处理原始信号的征时数量。</p>
+<h2 id="EQ">EQ</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>均衡</p>
+</li>
+<li class="lvl-2">
+<p>从根本上讲，EQ是一种基于频率的音量音调控制，可以提升和衰减不同的频率。为了达到这个目的就需要3种参数</p>
+<ul class="lvl-2">
+<li class="lvl-6">频率参数用来选择需要调整的频率</li>
+<li class="lvl-6">“Q”值参数决定中央频率两侧有多少频率需要调整</li>
+<li class="lvl-6">增益参数控制所选频率需要提升或衰减的量</li>
+</ul>
+</li>
+</ul>
+<h2 id="音色">音色</h2>
+<h3 id="pad">pad</h3>
+<p>要制作适合扫频的谐波丰满的声音，锯齿波、三角波、噪声波和方波能够得到最好的结果，但有些情况下也可以用正弦波来增加一些底部的基垫。对于Pad而言，可以使用两个锯齿波、三角波或脉冲波振荡器相互失谐3音分或5音分。这就在振荡器之间产生了轻微移相的效果，使音色更宽更悦耳。进一步强调这种失谐，可以用锯齿波、三角波、正弦波或噪声波低频振荡器调制其中一个振荡器，产生更模拟的感觉，同时也能防止基本音色过于死板。</p>
+<h1>混音指南</h1>
+<h2 id="相位">相位</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>同相</p>
+</li>
+<li class="lvl-2">
+<p>异相</p>
+</li>
+<li class="lvl-2">
+<p>反相</p>
+</li>
+<li class="lvl-2">
+<p>哈斯效应，两个相似波形延时&gt;40ms才能察觉 -&gt; 哈斯窗口，只关心在窗口内的相位问题（否则就不是小问题了）</p>
+</li>
+<li class="lvl-2">
+<p>可能产生梳状滤波效应</p>
+</li>
+<li class="lvl-2">
+<p>哈斯技巧：</p>
+<ul class="lvl-2">
+<li class="lvl-6">两个先后从不同方向上发出的声音的生源方向由前一个声音方向决定的的条件是：</li>
+<li class="lvl-6">后一个声音比前一个声音晚发出 1~35ms</li>
+<li class="lvl-6">后一个声音的响度比前一个声音的响度低 10dB 以上。</li>
+<li class="lvl-6">哈斯技巧就是简单的将一个原始信号分配到立体声输出的一个声道上，而将它的幻像复制信号延时1~35 ms，分配到立体声输出的另一个声道上而产生的</li>
+<li class="lvl-6">立体声信号合并为单声道时必然会产生梳状滤波效应（高频损失）</li>
+<li class="lvl-6">两种方法加强：
+<ul class="lvl-4">
+<li class="lvl-10">在幻像复制信号的声道上加入一个滤波器——通常是一个低通滤波器——能够让声音变得更自然，同时还可能在混音被合并为单声道的时候减少梳状滤波器效应。这种方法在使用哈斯技巧获得更真实的声像时特别有用</li>
+<li class="lvl-10">当使用哈斯技巧来增加声像的丰满度时，我们可以在幻像复制信号声道上载入延时器以后，通过比较小的调制速度和调制深度来调制延时器的延时时间。这会使得处理后的声像变得更大，更为丰满</li>
+</ul>
+</li>
+<li class="lvl-6">不要用太多，会让清晰度变差</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>界外立体声：只是一种特殊效果，偶尔使用，而且用在不重要的乐器上</p>
+</li>
+</ul>
+<h2 id="推子">推子</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>10dB为人耳主观感觉到的响度加倍或者减半的变化量（对哦，是lg）</p>
+</li>
+<li class="lvl-2">
+<p>原则：</p>
+<ul class="lvl-2">
+<li class="lvl-6">保证一些通道上的额外增益区间始终可用</li>
+<li class="lvl-6">从音量最大的轨道入手</li>
+</ul>
+</li>
+</ul>
+<h2 id="声像">声像</h2>
+<p>（我才发现书里的示意图上画的是一个俯视的人，而不是一个企鹅…）</p>
+<p>（dummy head是仿真头的意思）</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>当立体声信号被合并为单声道的时候，原本声像位于中间的声音大小不受影响，而声像位于一侧的声音下降3dB</p>
+</li>
+<li class="lvl-2">
+<p>一般bass和底鼓放在中央</p>
+</li>
+<li class="lvl-2">
+<p>在混音中，中央位置通常是乐器最为集中的位置；声像需要设置在中央的乐器，其声像其实可以设置在稍微偏离中央的位置上</p>
+</li>
+<li class="lvl-2">
+<p>在声场的每一个位置上应该都有乐器声像存在，不会出现声像空洞或者声像堆积</p>
+</li>
+<li class="lvl-2">
+<p>声像与画面中声源位置保持一致</p>
+</li>
+<li class="lvl-2">
+<p>混音的中央位置是声像清晰度最差的区域，而极左极右却能够提供清晰度最佳的声像定位，会听上去更清晰、离我们更近</p>
+</li>
+<li class="lvl-2">
+<p>甚至还有为豪华汽车做的声像设置，还得区分驾驶位在哪侧（hhh）</p>
+</li>
+</ul>
+<h2 id="EQ-2">EQ</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>目的：通过限制(?)频率让不同乐器都能被清晰的听见</p>
+</li>
+<li class="lvl-2">
+<p>人：20hz-20khz</p>
+</li>
+<li class="lvl-2">
+<p>标准电贝斯最低的E弦：41hz；中央C：262hz</p>
+</li>
+<li class="lvl-2">
+<p>频谱成分：</p>
+<ul class="lvl-2">
+<li class="lvl-6">基波(Fundamental)：一个声音中最低的频率。基波的频率决定了声音的音调。</li>
+<li class="lvl-6">谐波(Harmonics)：频率为基波频率整数倍的频率成分。例如，如果一个基波为100Hz，那么它的谐波就是200HZ、300HZ、400Hz、500Hz，以此类推。谐波是声音极为重要的组成部分——如果说基波能够决定声音的音调，那么谐波就能够赋予声音以色彩。</li>
+<li class="lvl-6">泛音(Overtones)：频率不一定是基波频率整数倍的频率成分。例如，一个150Hz的声音,就是一个100Hz 基波的泛音。像军鼓这样的乐器，在音调上显得非常不清晰同时产生了大量的噪音——这就是一种典型的泛音占主要内容的声音形态。</li>
+<li class="lvl-6">共振峰(Formants)：由物理共振产生的频率,不会随着音调的变化而产生变化。共振峰是对声音的特征起主要作用的因素——例如，我们能够识别每一个人的声音，就主要依靠他们各自的共振峰。</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>频段：</p>
+<ul class="lvl-2">
+<li class="lvl-6">次声频段(Sub sonic)(20Hz 以下)：唯一一种在这个频段上具有能量的乐器是大型的管风琴，它们只能在世界上为数不多的几个教堂中看到。这个频段的声音是不能被人听到的，但是它能够被感受到。尽管这个频段在电影的爆炸音效和雷声的制作中能够用得上，但是在音乐处理中不会使用到这个频段。</li>
+<li class="lvl-6">低频段最低部分(Low bass)(20~60Hz)：这个部分就是人耳可闻的最低的频段处于这个频段的声音，更多的是被感受到，而不是被听到，其感觉主要是力度，而不是音调。底鼓和贝司的基波通常位于这个频段，该频段也经常用来为底鼓增加次低音。钢琴也可以在这个频段产生一部分声音。</li>
+<li class="lvl-6">低频段中间部分(Mid bass)(60~120Hz)：在这个频段内，我们才开始获得音调的感觉。这个部分主要与力度(Power) 相关，主要是贝司和底鼓。</li>
+<li class="lvl-6">低频段较高部分(Upper bass)(120Hz~250Hz)：大部分乐器的基波都位于这个频段。这也是我们能够改变乐器自然音调 (Natural tone)的频段。</li>
+<li class="lvl-6">中低频段(Low-mids)(250Hz~2kHz)：这个频段基本上包括了各种乐器中最为重要的低次谐波，其音质(Meat)、色彩(Color)和大部分音色(Timbre)都由这个频段决定。</li>
+<li class="lvl-6">中高频段(High-mids)(2k~6kHz)：我们人耳对这个频段的感受是最灵敏的(根据等响曲线)，这个频段包含复杂的谐波成分(Complex harmonics)，与响度(Loudness)清晰度(Definition)、临场感(Presence)和语言的可懂度(Speech intelligibility)相关。</li>
+<li class="lvl-6">高频段(Highs)(6k~20kHz)：大部分乐器在这个频段上都只有很少的能量，但是它依然是一个很重要的频段。这个频段主要与光泽(Brilliance)、亮色(Sparkle)和空气感(Air) 相关。</li>
+<li class="lvl-6">
+
+</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>滤波器：只是衰减，不是完全去除部分信号</p>
+<ul class="lvl-2">
+<li class="lvl-6">通过式：HPF、LPF</li>
+<li class="lvl-6">搁架式：能衰减 + 提升</li>
+<li class="lvl-6">参量式：比如Fab filter的Q3</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>均衡器的增益越大，形成的相移越严重；提升操作会更有可能产生削波 -&gt; 多使用衰减</p>
+</li>
+<li class="lvl-2">
+<p><img src="读书笔记/image-20240109105055446.png" alt="image-20240109105055446" style="zoom:50%;" /> 不明觉厉（这俩圈应该是作者自己画上去的）</p>
+</li>
+<li class="lvl-2">
+<p>大脑能够重建信号中丢失的基频（这里原文的翻译…无力吐槽），所以可以剧烈使用高频滤波器</p>
+</li>
+<li class="lvl-2">
+<p>军鼓：<img src="读书笔记/image-20240109110616568.png" alt="image-20240109110616568" style="zoom:67%;" /></p>
+</li>
+<li class="lvl-2">
+<p>通鼓：<img src="读书笔记/image-20240109110734815.png" alt="image-20240109110734815" style="zoom:67%;" /></p>
+</li>
+<li class="lvl-2">
+<p>镲：<img src="读书笔记/image-20240109110756627.png" alt="image-20240109110756627" style="zoom:67%;" /></p>
+</li>
+<li class="lvl-2">
+<p>bass：<img src="读书笔记/image-20240109110850239.png" alt="image-20240109110850239" style="zoom:67%;" /></p>
+</li>
+</ul>
+<h2 id="动态范围处理器">动态范围处理器</h2>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">emilyu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://emilyu2003.github.io/2024/01/09/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">https://emilyu2003.github.io/2024/01/09/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/09/%E7%94%B5%E5%AD%90%E8%88%9E%E6%9B%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">电子舞曲手册读书笔记（一）</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/26/Unity%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E9%93%BE%E5%AE%89%E8%A3%85/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Unity3D工具链安装笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/my_avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">emilyu</div><div class="author-info__description">秃头歪三的废话坞</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">16</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/emilyu2003"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">这个人很懒 留下了很多废话</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">电子舞曲手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E6%8E%A7%E6%8C%AF%E8%8D%A1%E5%99%A8%EF%BC%88VCO%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">压控振荡器（VCO）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%BC%A6%E6%B3%A2"><span class="toc-number">1.1.1.</span> <span class="toc-text">正弦波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%A2"><span class="toc-number">1.1.2.</span> <span class="toc-text">方波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%89%E5%86%B2%E6%B3%A2"><span class="toc-number">1.1.3.</span> <span class="toc-text">脉冲波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AF%E9%BD%BF%E6%B3%A2"><span class="toc-number">1.1.4.</span> <span class="toc-text">锯齿波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E6%B3%A2"><span class="toc-number">1.1.5.</span> <span class="toc-text">三角波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%99%AA%E5%A3%B0%E6%B3%A2"><span class="toc-number">1.1.6.</span> <span class="toc-text">噪声波</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">滤波器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">放大器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E8%8A%82%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text">调节器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LFO"><span class="toc-number">1.4.1.</span> <span class="toc-text">LFO</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E5%99%A8"><span class="toc-number">1.5.</span> <span class="toc-text">压缩器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B7%E5%93%8D"><span class="toc-number">1.6.</span> <span class="toc-text">混响</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E7%9B%B8%EF%BC%88phaser%EF%BC%89%E5%92%8C%E9%95%B6%E8%BE%B9%EF%BC%88flanger%EF%BC%89"><span class="toc-number">1.7.</span> <span class="toc-text">移相（phaser）和镶边（flanger）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EQ"><span class="toc-number">1.8.</span> <span class="toc-text">EQ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E8%89%B2"><span class="toc-number">1.9.</span> <span class="toc-text">音色</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pad"><span class="toc-number">1.9.1.</span> <span class="toc-text">pad</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">混音指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D"><span class="toc-number">2.1.</span> <span class="toc-text">相位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E5%AD%90"><span class="toc-number">2.2.</span> <span class="toc-text">推子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E5%83%8F"><span class="toc-number">2.3.</span> <span class="toc-text">声像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EQ-2"><span class="toc-number">2.4.</span> <span class="toc-text">EQ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%8C%83%E5%9B%B4%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">2.5.</span> <span class="toc-text">动态范围处理器</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/09/%E7%94%B5%E5%AD%90%E8%88%9E%E6%9B%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="电子舞曲手册读书笔记（一）">电子舞曲手册读书笔记（一）</a><time datetime="2024-01-09T03:15:25.000Z" title="Created 2024-01-09 11:15:25">2024-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/09/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="电子舞曲手册读书笔记（一）"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="电子舞曲手册读书笔记（一）"/></a><div class="content"><a class="title" href="/2024/01/09/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="电子舞曲手册读书笔记（一）">电子舞曲手册读书笔记（一）</a><time datetime="2024-01-09T03:15:25.000Z" title="Created 2024-01-09 11:15:25">2024-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/26/Unity%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E9%93%BE%E5%AE%89%E8%A3%85/" title="Unity3D工具链安装笔记">Unity3D工具链安装笔记</a><time datetime="2023-12-26T06:37:23.000Z" title="Created 2023-12-26 14:37:23">2023-12-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/" title="复杂性类">复杂性类</a><time datetime="2023-05-30T05:34:51.000Z" title="Created 2023-05-30 13:34:51">2023-05-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/28/rand_Alg_Note_1/" title="random_alg_0">random_alg_0</a><time datetime="2023-05-28T04:40:27.000Z" title="Created 2023-05-28 12:40:27">2023-05-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By emilyu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Local search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'fsRbCk8Nuy3KOqDFR3dATKLN-gzGzoHsz',
+      appKey: 'QcoBfjjHRbYoXsg5DnJhty93',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: {"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_親親":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再見":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_發怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_發財":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可愛":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_嘔吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_壞笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尷尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_驚嚇":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://emilyu2003.github.io/2024/01/09/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/'
+    this.page.identifier = '2024/01/09/读书笔记/'
+    this.page.title = '电子舞曲手册读书笔记（一）'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/%5Bobject%20Object%5D"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
