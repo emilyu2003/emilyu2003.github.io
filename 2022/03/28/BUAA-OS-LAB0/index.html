@@ -172,11 +172,11 @@ commit：git commit</p>
 <p>已进入暂存区，但还没有push上去，所以选择使用：<code>git rm --cached printf.c</code></p>
 <h4 id="Thinking-0-4">Thinking 0.4</h4>
 <p>首先，先按教程完成三次提交。</p>
-<img src="/.io//03/28/BUAA-OS-LAB0/image-20220309201900053.png" class title="image-20220309201900053">
-<img src="/.io//03/28/BUAA-OS-LAB0/image-20220309202044749.png" class title="image-20220309202044749">
-<img src="/.io//03/28/BUAA-OS-LAB0/image-20220309202146198.png" class title="image-20220309202146198">
-<img src="/.io//03/28/BUAA-OS-LAB0/image-20220309202254700.png" class title="image-20220309202254700">
-<img src="/.io//03/28/BUAA-OS-LAB0/image-20220309202254700-16473025327461.png" class title="image-20220309202254700-16473025327461">
+<img src="03/28/BUAA-OS-LAB0/image-20220309201900053.png" class title="image-20220309201900053">
+<img src="03/28/BUAA-OS-LAB0/image-20220309202044749.png" class title="image-20220309202044749">
+<img src="03/28/BUAA-OS-LAB0/image-20220309202146198.png" class title="image-20220309202146198">
+<img src="03/28/BUAA-OS-LAB0/image-20220309202254700.png" class title="image-20220309202254700">
+<img src="03/28/BUAA-OS-LAB0/image-20220309202254700-16473025327461.png" class title="image-20220309202254700-16473025327461">
 <p>由此，可以看出来head是一个“指针”，指向当前的版本。同时每个版本都有一个hash值，用来标记不同版本并回退/回到未来。使用git reset --hard HEAD^即退回到上个版本，在这里即comment为“2”的提交，使用git reset --hard &lt;Hash-code&gt;即去往HashCode标记的版本。</p>
 <h4 id="Thinking-0-5">Thinking 0.5</h4>
 <blockquote>
@@ -243,9 +243,9 @@ commit：git commit</p>
 <p><code>echo echo Shell Start</code> 与 <code>echo 'echo Shell Start'</code>没有区别，都是输出<code>echo echo Shell Start</code>。</p>
 <p>而对于<code>echo echo \$c&gt;file1</code> 与 <code>echo 'echo \$c&gt;file1'</code>的效果，如图（忽略第一行）：</p>
 <p>首先是<code> echo 'echo \$c&gt;file1'</code> ，显然他只是在打印字符串</p>
-<img src="/.io//03/28/BUAA-OS-LAB0/image-20220321232133765.png" class title="image-20220321232133765">
+<img src="03/28/BUAA-OS-LAB0/image-20220321232133765.png" class title="image-20220321232133765">
 <p><code>echo echo \$c&gt;file1</code>  的结果：</p>
-<img src="/.io//03/28/BUAA-OS-LAB0/image-20220321232223350.png" class title="image-20220321232223350">
+<img src="03/28/BUAA-OS-LAB0/image-20220321232223350.png" class title="image-20220321232223350">
 <p>它还同时产生了一个空的file1文件。</p>
 <p>但本人在一开始做lab0的时候，印象中这里是`xxx’这样形状的两个引号，看起来是打错了。不过两个``，即两个反引号形成的串是要执行的命令，echo ``是用来输出执行结果的。</p>
 <h2 id="（二）实验难点">（二）实验难点</h2>

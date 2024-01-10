@@ -215,7 +215,7 @@
 </ul>
 <p>​	所以通过“分词器”遍历一次表达式，我们便可以计算出表达式展开后的结果，同时进行化简。</p>
 <h5 id="1-1-7-代码构架：">1.1.7&gt; 代码构架：</h5>
-<img src="/.io//03/28/BUAA-OO-U1/HW1.png" class title="HW1">
+<img src="03/28/BUAA-OO-U1/HW1.png" class title="HW1">
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><strong>Main</strong>：负责读入并串联所有的方法，最后输出表达式。</p>
@@ -311,7 +311,7 @@
 <p>​	但是对于乘方的处理，本人除了运用大家都想到了把<code>**</code>的替换成为<code>^</code>的方法以外，并没有运用他人在handler里面直接处理的方式，而还是在预处理中通过for循环进行了展开，但实现了拆除多层乘方嵌套的递归方法。功能强大了一些，但是在这里初始化与在handler里一同处理掉的效率差距是明显的：需要多遍历一次而且会把表达式展开成为非常冗长的串，再进行分词、读取、处理。由于时间不足，来不及进一步优化，所以就把这一部分留给了HW3去解决。</p>
 <h5 id="1-2-5-代码构架">1.2.5&gt; 代码构架</h5>
 <p>​	在这次开发之前，本来想借用对于表达式层、项层和因子层均采用不同类型进行对象包装的方法来构架代码，但越改越错，本人对于类型互相转换的能力实在是有欠缺，不得不悬崖勒马，即使停手。所以整个代码依旧是没有任何继承、实现关系的“面向过程”模式。</p>
-<img src="/.io//03/28/BUAA-OO-U1/HW2.png" class title="HW2">
+<img src="03/28/BUAA-OO-U1/HW2.png" class title="HW2">
 <ul class="lvl-0">
 <li class="lvl-2">
 <p><strong>Main</strong>：同上，负责读入并串联所有的方法，最后输出表达式。</p>
@@ -369,7 +369,7 @@
 <hr>
 <h4 id="2-1-在python中调用jar包">2.1&gt; 在python中调用jar包</h4>
 <h5 id="2-1-1-打jar包">2.1.1&gt; 打jar包</h5>
-<img src="/.io//image-20220304192220223.png" alt="image-20220304192220223" style="zoom:50%;">
+<img src="image-20220304192220223.png" alt="image-20220304192220223" style="zoom:50%;">
 <p>​	所有设置完毕后，在顶栏选择build，点击build artifact - build即可。</p>
 <h5 id="2-1-2-python调用jar包">2.1.2&gt; python调用jar包</h5>
 <p>运行jar：</p>
@@ -394,9 +394,9 @@
 <h3 id="三-度量分析">三 / 度量分析</h3>
 <hr>
 <h4 id="3-1-代码行数">3.1&gt; 代码行数</h4>
-<img src="/.io//03/28/BUAA-OO-U1/image-20220324005653941.png" class title="image-20220324005653941">
-<img src="/.io//03/28/BUAA-OO-U1/image-20220324005754651.png" class title="image-20220324005754651">
-<img src="/.io//03/28/BUAA-OO-U1/image-20220324005959176.png" class title="image-20220324005959176">
+<img src="03/28/BUAA-OO-U1/image-20220324005653941.png" class title="image-20220324005653941">
+<img src="03/28/BUAA-OO-U1/image-20220324005754651.png" class title="image-20220324005754651">
+<img src="03/28/BUAA-OO-U1/image-20220324005959176.png" class title="image-20220324005959176">
 <p>​	相对来说，总体工程量不大，但是对于刚刚接触面向对象的本人来说还是有些许难度。</p>
 <p>​	可见在第三次的修改中，代码行数反而比第二次少了，所以不重复造轮子，让Handler类尽其值应该是有效之举。同时，观察Initiate类，发现其行数在第三次的修改中是行数变少的主力，其中用于输出信息调试的注释也变少了很多，故把Power单独作为一层在计算中处理而不是预处理时包里展开的做法，可以印证上句提出的观点。</p>
 <p>​	（而本人一向到处留空行的习惯也被数据发掘了。）</p>
@@ -416,21 +416,21 @@
 <p><strong>v(G)</strong>：用来衡量一个模块<strong>判定结构的复杂程度</strong>，数量上表现为独立路径的条数，即合理的预防错误所需测试的最少路径条数，圈复杂度大说明程序代码可能质量低且难于测试和维护，经验表明，程序的可能错误和高的圈复杂度有着很大关系。</p>
 </li>
 </ul>
-<p><img src="/.io//../../../%25E5%25AD%25A6%25E6%25A0%25A1/%25E5%258C%2597%25E8%2588%25AA/%25E5%25A4%25A7%25E4%25BA%258C/OO/U1/HW4/BUAA-OO-U1-Summary/image-20220324172123508.png" alt></p>
-<img src="/.io//03/28/BUAA-OO-U1/image-20220324172144720.png" class title="image-20220324172144720">
+<p><img src="../../../%25E5%25AD%25A6%25E6%25A0%25A1/%25E5%258C%2597%25E8%2588%25AA/%25E5%25A4%25A7%25E4%25BA%258C/OO/U1/HW4/BUAA-OO-U1-Summary/image-20220324172123508.png" alt></p>
+<img src="03/28/BUAA-OO-U1/image-20220324172144720.png" class title="image-20220324172144720">
 <blockquote>
 <p>HW1 metrics reloaded</p>
 </blockquote>
 <p>​	可见红色的部分非常多，各种复杂度都处于很高的状态，特别是涉及初始化、输出的类和方法。但整体来看，e(v)即结构化程度还是相对较高的；但CogC也就是程序中的独立路径数量大（为了让输出最短需要各种特判 + 第一次作业中糟糕的for循环程设法初始化所致），模块之间高耦合，复杂程度高，明显是一份较为糟糕的代码。</p>
-<img src="/.io//03/28/BUAA-OO-U1/image-20220325100834162.png" class title="image-20220325100834162">
-<p><img src="/.io//../../../%25E5%25AD%25A6%25E6%25A0%25A1/%25E5%258C%2597%25E8%2588%25AA/%25E5%25A4%25A7%25E4%25BA%258C/OO/U1/HW4/BUAA-OO-U1-Summary/image-20220325100906594.png" alt></p>
+<img src="03/28/BUAA-OO-U1/image-20220325100834162.png" class title="image-20220325100834162">
+<p><img src="../../../%25E5%25AD%25A6%25E6%25A0%25A1/%25E5%258C%2597%25E8%2588%25AA/%25E5%25A4%25A7%25E4%25BA%258C/OO/U1/HW4/BUAA-OO-U1-Summary/image-20220325100906594.png" alt></p>
 <blockquote>
 <p>HW2 metrics reloaded</p>
 </blockquote>
 <p>​	从方法数量的角度看，增多了不少，四个评判标准下的复杂度平均值都有下降，其中iv(G)最为明显，说明耦合程度降低了。而通过优化输出方式，使输出分散到每种不同的因子，一点一点自底向上形成输出，使得输出的CogC降低了很多，剩余的圈复杂度基本上都落在初始化（乘方展开成乘法的步骤）上面了。相对，ev(i)平均值下降了但最大值上升了，这是因为我把去前导零的工作放在了初始化中而非分词的时候，现在回想起来还是应该在分词的时候做这项工作，反正粉刺的时候也要遍历，这样反而多循环一次。</p>
-<p><img src="/.io//../../../%25E5%25AD%25A6%25E6%25A0%25A1/%25E5%258C%2597%25E8%2588%25AA/%25E5%25A4%25A7%25E4%25BA%258C/OO/U1/HW4/BUAA-OO-U1-Summary/image-20220325101505598.png" alt><br>
-<img src="/.io//../../../%25E5%25AD%25A6%25E6%25A0%25A1/%25E5%258C%2597%25E8%2588%25AA/%25E5%25A4%25A7%25E4%25BA%258C/OO/U1/HW4/BUAA-OO-U1-Summary/image-20220325101527310.png" alt></p>
-<img src="/.io//03/28/BUAA-OO-U1/image-20220325101541330.png" class title="image-20220325101541330">
+<p><img src="../../../%25E5%25AD%25A6%25E6%25A0%25A1/%25E5%258C%2597%25E8%2588%25AA/%25E5%25A4%25A7%25E4%25BA%258C/OO/U1/HW4/BUAA-OO-U1-Summary/image-20220325101505598.png" alt><br>
+<img src="../../../%25E5%25AD%25A6%25E6%25A0%25A1/%25E5%258C%2597%25E8%2588%25AA/%25E5%25A4%25A7%25E4%25BA%258C/OO/U1/HW4/BUAA-OO-U1-Summary/image-20220325101527310.png" alt></p>
+<img src="03/28/BUAA-OO-U1/image-20220325101541330.png" class title="image-20220325101541330">
 <blockquote>
 <p>HW3 metrics reloaded</p>
 </blockquote>
@@ -447,7 +447,7 @@
 <p>​	我测试的用例是2 + x * x，按理说极为简单，结果得到的结果是：</p>
 </li>
 </ol>
-<img src="/.io//03/28/BUAA-OO-U1/image-20220325105632221.png" class title="image-20220325105632221">
+<img src="03/28/BUAA-OO-U1/image-20220325105632221.png" class title="image-20220325105632221">
 <p>​			百思不得其解，为什么能分出这么奇怪的模样。直到我发现\x后面应该是16进制，而因为过分巧合，0x32正好是数字2。</p>
 <ol start="2">
 <li class="lvl-3">
@@ -465,7 +465,7 @@
 <p>​	被hack数据：<code>5 * ( - + -01 + 7)</code> 和<code>(--+2*x-x**+2*x*2)**2*2*2</code></p>
 <p>​	究其原因，就是左括号后面的加减号没有处理，再带上一个前导零就遇到问题了。</p>
 <p>​	大概2k组随机都没有跑出来。但这种bug存在的应该不少，所以之后的作业都换成了正则表达式，直接replaceAll，且捋清楚了初始化的顺序，重新组织了逻辑。</p>
-<img src="/.io//03/28/BUAA-OO-U1/image-20220325111014437.png" class title="image-20220325111014437">
+<img src="03/28/BUAA-OO-U1/image-20220325111014437.png" class title="image-20220325111014437">
 <center> HW1互测结局</center>
 <h6 id="HW2">&gt; HW2</h6>
 <p>​	第二次强测死的比较惨，原因是下列两个bug：</p>
@@ -478,15 +478,15 @@
 </li>
 </ol>
 <p>​	幸亏这次互测中不能有针对sum的数据，否则我的数据将变得极为难看。</p>
-<img src="/.io//image-20220325112428912.png" alt="image-20220325112428912" style="zoom: 33%;">
+<img src="image-20220325112428912.png" alt="image-20220325112428912" style="zoom: 33%;">
 <center> HW2互测结局</center>
 <p>​	从这次的bug来看，本人<strong>阅读指导书</strong>的精细度还是有待提高，两个问题都涉及到输入和输出的规则。</p>
 <h6 id="HW3">&gt; HW3</h6>
 <p>​	第三次的代码对曾经出现bug的位置，如初始化和输出，都进行了改善，所以强测安稳地通过了。但是互测仍被挑出了bug，这个bug甚至还是我自己hack出来的：<code>sum(i, -01, +01, (-i**0))</code>。这也得怪在没好好<strong>阅读指导书</strong>。明明互测的时候很认真的读了发现i上面可以有指数，但是做题的时候偏偏就没注意，还自己思索了一下并坚定的认为i不需要带括号，这样少递归一层，免得出现爆栈的情况。	当然，这个点报错的概率其实很大：</p>
-<img src="/.io//03/28/BUAA-OO-U1/image-20220325113022724.png" class title="image-20220325113022724">
+<img src="03/28/BUAA-OO-U1/image-20220325113022724.png" class title="image-20220325113022724">
 <center> HW2互测过程截图</center>
 <p>​	但是强测并没有相关测试点，所以强测还是很安稳的通过了。互测也很刺激，当然也有**<font color="violet" size="3">大师</font>**吐槽我说你这个狂战士真是温文尔雅。</p>
-<img src="/.io//03/28/BUAA-OO-U1/image-20220325113546760.png" class title="image-20220325113546760">
+<img src="03/28/BUAA-OO-U1/image-20220325113546760.png" class title="image-20220325113546760">
 <center> HW3互测结局</center>
 <h4 id="4-2-互测他人问题总结">4.2&gt; 互测他人问题总结</h4>
 <p>​	共hack13次（但神奇的是下文总结出了14个bug）。而且喜欢合并提交，这样看起来成功率高一些（除了调动全房气氛以外没有任何用处）。</p>
