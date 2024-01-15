@@ -1,0 +1,589 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>毕设文献笔记（二） | Ylog</title><meta name="keywords" content="三角形计数 算法"><meta name="author" content="emilyu"><meta name="copyright" content="emilyu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Reductions in Streaming Algorithm with an Application to Counting 概述  first natural graph algorithm in streaming model  Stream reductions and list-efficient algorithms  流归约：（看到这里我突然意识到这篇文章之前打">
+<meta property="og:type" content="article">
+<meta property="og:title" content="毕设文献笔记（二）">
+<meta property="og:url" content="https://emilyu2003.github.io/2024/01/15/%E6%AF%95%E8%AE%BE%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/index.html">
+<meta property="og:site_name" content="Ylog">
+<meta property="og:description" content="Reductions in Streaming Algorithm with an Application to Counting 概述  first natural graph algorithm in streaming model  Stream reductions and list-efficient algorithms  流归约：（看到这里我突然意识到这篇文章之前打">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://emilyu2003.github.io/img/my_avatar.png">
+<meta property="article:published_time" content="2024-01-15T07:36:08.000Z">
+<meta property="article:modified_time" content="2024-01-15T07:38:07.055Z">
+<meta property="article:author" content="emilyu">
+<meta property="article:tag" content="毕设">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://emilyu2003.github.io/img/my_avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://emilyu2003.github.io/2024/01/15/%E6%AF%95%E8%AE%BE%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '毕设文献笔记（二）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-01-15 15:38:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.0.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/my_avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Ylog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">毕设文献笔记（二）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-01-15T07:36:08.000Z" title="Created 2024-01-15 15:36:08">2024-01-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-01-15T07:38:07.055Z" title="Updated 2024-01-15 15:38:07">2024-01-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="毕设文献笔记（二）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="reductions-in-streaming-algorithm-with-an-application-to-counting">Reductions
+in Streaming Algorithm with an Application to Counting</h1>
+<h2 id="概述">概述</h2>
+<ul>
+<li>first natural graph algorithm in streaming model</li>
+</ul>
+<h3 id="stream-reductions-and-list-efficient-algorithms">Stream
+reductions and list-efficient algorithms</h3>
+<ul>
+<li>流归约：（看到这里我突然意识到这篇文章之前打开过，在这里截过图）
+<ul>
+<li>归约R，从问题A到问题B的工作方式：</li>
+<li>用多项式时间，把每个输入A的流（A的实例）转化为输入B的流（B的实例）</li>
+<li>（于是可以由B和R找到A？）</li>
+</ul></li>
+<li>list-efficient</li>
+<li>list-efficient primitives（原语？）：元素的出现频率，<span class="math inline">\(F_k\)</span> 表示k阶频率矩 = 数据集中出现次数的 k
+次幂的加权和，即<span class="math inline">\(\sum_{j \in [m]}
+f^k_j\)</span>，其中<span class="math inline">\(f_j\)</span>为元素j在序列中的出现次数</li>
+<li>关于流数据的三角计数：两种流
+<ul>
+<li>边任意顺序</li>
+<li>同一个点的入边依次流过</li>
+</ul></li>
+</ul>
+<h2 id="预备知识">预备知识</h2>
+<ul>
+<li>流算法：相对近似和比值近似</li>
+<li>frequency moments，<span class="math inline">\(F_k\)</span> (the
+n-th moment of a distribution is the expected value of the n-th power of
+the deviations from a fixed value，矩)</li>
+<li>然后是三个流算法的例子，头大</li>
+</ul>
+<h2 id="流算法的归约">流算法的归约</h2>
+<p>得亏之前上过课，要不然这里真的一个字看不懂…</p>
+<p><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240111150955465.png" alt="image-20240111150955465" style="zoom:67%;"></p>
+<ul>
+<li>f是我们需要通过流算法归约的函数（比如三角形计数）</li>
+<li><span class="math inline">\(\mathcal{L}：\mathcal{L} \subset
+A^*\)</span>，是一些来自A的数据项的集合</li>
+<li><span class="math inline">\(L：L \in
+\mathcal{L}\)</span>，是一个数据项</li>
+<li>归约图灵机M
+<ul>
+<li>三种基本的程序：
+<ul>
+<li>近似参数归约<span class="math inline">\(\phi_A\)</span>：将函数f的误差和置信度参数映射为多个其他函数g1，...，gq的近似的误差和置信度参数</li>
+<li>数据项归约<span class="math inline">\(\phi_D\)</span>：根据当前读取的数据项和机器M的格局，为函数g1，...，gq生成了q个数据项列表</li>
+<li>输出归约<span class="math inline">\(\phi_O\)</span>：将M1，...，Mq的输出和它们对应的最终格局映射为函数f的输出</li>
+</ul></li>
+<li>space：<span class="math inline">\(M_1 \dots
+M_q\)</span>的和，加上计算<span class="math inline">\(\phi_A \phi_D
+\phi_O\)</span>的空间，不需要存<span class="math inline">\(\phi_D\)</span></li>
+<li>time：如果可以接受间接的<span class="math inline">\(L_i\)</span>，那么效率会很高</li>
+</ul></li>
+<li>list efficiency的定义（？）：a streaming algorithm M for f is said
+to be t-efficient with respect to <span class="math inline">\(\mathcal{L}\)</span>, if it approximates f and
+spends at most t(s) steps for each list in the input stream, where s is
+the size of the representation of the list.<br>
+</li>
+<li>range efficient: if it is list efficient with respect to the class
+of all ranges</li>
+</ul>
+<h2 id="流中不同元素的计数">流中不同元素的计数</h2>
+<p>即<span class="math inline">\(F_0\)</span></p>
+<p><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240111155037367.png" alt="image-20240111155037367" style="zoom:67%;"></p>
+<ul>
+<li>两趟思路：我也很想看懂，我只能看懂用了切诺夫界、柯西施瓦兹不等式和切比雪夫不等式</li>
+<li>可以把它变成一趟的算法：用了hash，其他的不知道</li>
+<li>近似计算<span class="math inline">\(F_0\)</span>的range
+efficient</li>
+</ul>
+<h2 id="range-efficiently的近似计算其他频率矩">range
+efficiently的近似计算其他频率矩</h2>
+<p><del>即看不懂又想翻译的后果就是上面那样</del></p>
+<p>就是把<span class="math inline">\(F_0\)</span>扩展到<span class="math inline">\(F_k\)</span></p>
+<h2 id="三角形计数">三角形计数</h2>
+<ul>
+<li>是归约的应用</li>
+<li>两种图的流的表现形式：
+<ul>
+<li>邻接流（adjacency
+stream）：每条边是一个数据项，流由边的任意顺序构成，更适合度数大的图</li>
+<li>入射流（incidence
+stream）：每个点和它的邻居们构成一个数据项，流由任意顺序的每个点的数据项构成，更适合度数有上界的图</li>
+</ul></li>
+<li>三元组的四种类型：三元组中相连的有0,1,2,3条边，用<span class="math inline">\(T_{0,1,2,3}\)</span>表示，三角形的个数即<span class="math inline">\(T_3\)</span>，这个好像在综述里见过</li>
+<li>本文思路：计算无向三角形的问题归约为为对流的频率矩进行估计</li>
+</ul>
+<h3 id="adjacency-stream-algorithm">adjacency stream algorithm</h3>
+<ul>
+<li><p>对于一条边e = {u, v}</p>
+<ul>
+<li>记<span class="math inline">\(\mathcal{V}_e\)</span>为所有包含点u和v的三元组，<span class="math inline">\(\mathcal{V}_e = n-2\)</span></li>
+<li>记<span class="math inline">\(\sigma\)</span>为包含所有边对应的<span class="math inline">\(\mathcal{V}_e\)</span>的流，即<span class="math inline">\(|\sigma| = |n-2||E|\)</span></li>
+</ul></li>
+<li><p><span class="math inline">\(F_k = F_k(\sigma) = T_1 \cdot 1^k +
+T_2 \cdot 2^k + T_3 \cdot 3^k\)</span>，可以理解为对于<span class="math inline">\(T_i\)</span>中的每个三元组会对<span class="math inline">\(\sigma\)</span>贡献<span class="math inline">\(i\)</span>个数据项</p></li>
+<li><p><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240111163900599.png" alt="image-20240111163900599" style="zoom:50%;"></p></li>
+<li><p>求逆，可得<span class="math inline">\(T_3 = F_0 - 1.5F_1 + 0.5
+F_2\)</span></p></li>
+</ul>
+<h3 id="incidence-stream-algorithm">incidence stream algorithm</h3>
+<ul>
+<li><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240111164204654.png" alt="image-20240111164204654" style="zoom:67%;"></li>
+<li>观察<span class="math inline">\(F_k = F_k(\sigma) = T_2 \cdot 1^k +
+T_3 \cdot 3^k\)</span>，可以理解为每个<span class="math inline">\(\mathcal{V}_2\)</span>中的三元组会贡献一个数据项，每个<span class="math inline">\(\mathcal{V}_3\)</span>中的三元组会贡献3个数据项</li>
+<li><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240111165100394.png" alt="image-20240111165100394" style="zoom:50%;"></li>
+<li>求逆，可得<span class="math inline">\(T_3 =
+(-F_1+F_2)/6\)</span>，又<span class="math inline">\(F_1
+=|\sigma|\)</span>，所以只需要计算<span class="math inline">\(F_2\)</span></li>
+</ul>
+<h2 id="讨论">讨论</h2>
+<ul>
+<li>遗留问题：
+<ul>
+<li>寻找一个让<span class="math inline">\(F_0\)</span>对<span class="math inline">\(1/\epsilon\)</span>具有更好依赖性的range
+efficient算法，这将直接改善本文三角形算法对(T1 +
+T2)/T3的比例的依赖性</li>
+<li>在T1、T2、T3方面获得计算三角形的更明确的空间下界</li>
+<li>找到本文的邻接流算法优于朴素抽样算法的情况</li>
+</ul></li>
+</ul>
+<p>（很好，下一步就是找到哪些文章解决了这些问题）</p>
+<h1 id="efficient-semi-streaming-algorithms-for-local-triangle-counting-in-massive-graphs">Efficient
+Semi-streaming Algorithms for Local Triangle Counting in Massive
+Graphs</h1>
+<ul>
+<li>第一个关注解决大规模图中本地<strong>(local)</strong>三角形计数问题的效率问题</li>
+<li>这里的local应该是相对于global意义上的local。可能翻译成局部更好</li>
+<li>两个算法
+<ul>
+<li>主存<span class="math inline">\(O(|V|)\)</span> + 外存<span class="math inline">\(O(|E|)\)</span></li>
+<li>主存<span class="math inline">\(O(|V|)\)</span></li>
+</ul></li>
+<li>代码：http://law.dsi.unimi.it/satellite-software/（我打不开）</li>
+</ul>
+<h2 id="简介">简介</h2>
+<ul>
+<li><p>点u的三角形数：<img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240111210652761.png" alt="image-20240111210652761" style="zoom: 50%;"></p></li>
+<li><p>transitivity coefficient（传递性系数）：<span class="math inline">\(\frac{2T(u)}{d_u(d_u-1)}\)</span>，即点上的三角形个数/点上可能形成的三角形个数</p></li>
+<li><p>关注单独点上的三角形计数（甚至，in this paper we are interested
+in estimating the local clustering coefficient (and the number of
+triangles) for all vertices <strong>at the same time</strong>）</p></li>
+<li><p>两个算法</p>
+<ul>
+<li>用最小独立哈希函数来计算有序集合的随机排列，对于本文的问题来说是生成随机的二进制标签，给点集上标记
++ 处理冲突，在主存中为每条边分配一个对应的计数器</li>
+<li>在主存中为每个点分配一个对应的计数器，比第一个方法更快</li>
+</ul></li>
+</ul>
+<h2 id="预备知识-1">预备知识</h2>
+<h3 id="semi-streaming-graph-algorithms">Semi-streaming graph
+algorithms</h3>
+<ul>
+<li><p>这里的semi应该是针对存储的使用上说的，按理说streaming应该全在内存中完成，semi相当于用到了外存</p></li>
+<li><p>它的基本思路也是找两个点的邻点集合的交集</p></li>
+<li><p>数据集：WEBBASE-2001，IT-2004，EU-2005，UK-2006-05</p></li>
+<li><p>对称图，不考虑环</p></li>
+</ul>
+<h2 id="估计集合交集">估计集合交集</h2>
+<ul>
+<li>使用Jaccard 系数：<span class="math inline">\(J(A,B)=\frac{|A \cap
+B|}{|A \cup B|}\)</span></li>
+<li>考虑排列组合，但是需要指数级空间</li>
+<li>伪代码：<img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240112230326322.png" alt="image-20240112230326322" style="zoom:67%;"></li>
+<li>其中l(j)就是每个点的k位二进制label，L(A)是子集A中最小的l</li>
+<li>当二进制的label足够随机的时候，就可以忽略hash冲突带来的影响</li>
+</ul>
+<h2 id="估计三角形数量">估计三角形数量</h2>
+<ul>
+<li><p>把同样的方法迁移过来</p></li>
+<li><p><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114114846831.png" alt="image-20240114114846831" style="zoom:67%;"></p></li>
+<li><p>m趟：</p>
+<ul>
+<li>每趟产生一个hash函数</li>
+<li>第一次读：把每个点的邻点的最小hash值存下来</li>
+<li>第二次遍历所有边，如果两侧的点的邻点最小hash一样，说明构成了一个三角形</li>
+<li>据此估计三角形数量</li>
+</ul></li>
+<li><p>近似的质量只和图的局部属性有关</p></li>
+<li><p>用<img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114200458913.png" alt="image-20240114200458913" style="zoom:33%;">作为相对误差，20趟的效果已经很好了</p></li>
+</ul>
+<h2 id="在主存中进行三角形计数">在主存中进行三角形计数</h2>
+<ul>
+<li>从对每条边进行计数改为对每个顶点维护一个计数器，用<img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114221542587.png" alt="image-20240114221542587" style="zoom:33%;">估计u上的三角形个数</li>
+<li><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114221729668.png" alt="image-20240114221729668" style="zoom:80%;"></li>
+</ul>
+<h2 id="证明">证明</h2>
+<p>头疼</p>
+<ul>
+<li>实验结果：用主存的有时候比二级内存更快</li>
+</ul>
+<h2 id="应用">应用</h2>
+<h3 id="检测垃圾邮件">检测垃圾邮件</h3>
+<ul>
+<li>two-tailed Kolmogorov-Smirnov test 【中等大小的疑问】</li>
+<li>看图片应该是各个节点上三角形数量的分布不同，spam的网络中每个节点最大三角形个数多的节点非常多</li>
+<li><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114225625873.png" alt="image-20240114225625873" style="zoom:33%;"></li>
+</ul>
+<h3 id="社交网络中的内容质量">社交网络中的内容质量</h3>
+<ul>
+<li>没从图里看出区别</li>
+</ul>
+<h2 id="总结">总结</h2>
+<ul>
+<li>展望：
+<ul>
+<li>真实网络情况是服从幂律的，也就是说三角形分布会很不均匀，所以每个计数器的位数可以不一样，可以在这个角度进行存储的压缩</li>
+<li>在主存中可以这样做，在外存中这样做可能降低效率</li>
+</ul></li>
+</ul>
+<h1 id="a-space-efficient-streaming-algorithm-for-triangle-counting-using-the-birthday-paradox">A
+Space Efficient Streaming Algorithm for Triangle Counting using the
+Birthday Paradox</h1>
+<ul>
+<li>基于生日悖论的估计传递度的一趟算法</li>
+<li>生日悖论：if we choose 23 random people, the probability that 2 of
+them share a birthday is at least 1/2</li>
+<li><span class="math inline">\(O(\sqrt{n})\)</span>的空间</li>
+<li>small space streaming algorithm</li>
+</ul>
+<h2 id="简介-1">简介</h2>
+<h3 id="流的设置">流的设置</h3>
+<ul>
+<li>同上，传递度为<span class="math inline">\(\kappa =
+\frac{三角形个数}{三元组个数}\)</span>，即<span class="math inline">\(\kappa =
+\frac{T}{W}\)</span>，T=triangle，W=wedge</li>
+<li>流过边，只维护一个小的数据结构，”sketch“</li>
+</ul>
+<h3 id="结果">结果</h3>
+<ul>
+<li><span class="math inline">\(O(m/\sqrt T)\)</span> -
+space，基本上是<span class="math inline">\(O(\sqrt{n})\)</span></li>
+<li>但T太小就不好</li>
+</ul>
+<h2 id="算法">算法</h2>
+<ul>
+<li><p>wedge sampling，获得W</p></li>
+<li><p>reservoir sampling</p></li>
+</ul>
+<h3 id="streaming-triangles">streaming-triangles</h3>
+<ul>
+<li>我愿称之为边暂存器和三元组暂存器（这个好像上面的综述说过，对我确认了一下就是在流算法的2处引用的这篇文章）</li>
+<li><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114232731676.png" alt="image-20240114232731676" style="zoom:67%;"></li>
+<li><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114232743621.png" alt="image-20240114232743621" style="zoom:67%;"></li>
+</ul>
+<h3 id="single-bit">single-bit</h3>
+<ul>
+<li>理想化的算法，用更大的空间和消耗更大的更新</li>
+<li><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114233242342.png" alt="image-20240114233242342" style="zoom:67%;"></li>
+<li>然后是一些证明</li>
+</ul>
+<h1 id="fast-counting-of-triangles-in-large-real-networks-without-counting-algorithms-and-laws">Fast
+Counting of Triangles in Large Real Networks without Counting Algorithms
+and Laws</h1>
+<h2 id="简介-2">简介</h2>
+<ul>
+<li>可以实现三角形总数的计数和局部的计数</li>
+<li>目标是提出一种新的方法，在准确、快速和容易并行的情况下，在大型、现实世界的网络中近似地计数三角形</li>
+<li>特征值的含义：
+<ul>
+<li>邻接矩阵：the path capacity of the graph<br>
+</li>
+<li>拉普拉斯矩阵：the connectivity of the graph
+<ul>
+<li>A表示邻接矩阵，D表示度矩阵（A上每列的和放到对角线上，其余位置置零），用D-A表示拉普拉斯矩阵L</li>
+<li>性质：
+<ul>
+<li>拉普拉斯矩阵是半正定矩阵；</li>
+<li>特征值中0出现的次数就是图连通区域的个数；</li>
+<li>最小特征值是0，因为拉普拉斯矩阵每一行的和均为0；</li>
+<li>最小非零特征值是图的代数连通度</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="理论和证明">理论和证明</h2>
+<ul>
+<li><p>关于特征值：<img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114235700009.png" alt="image-20240114235700009" style="zoom:67%;"></p></li>
+<li><p>使用LanczosMethod 计算特征值</p></li>
+<li><p>全局三角形计数算法：<img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114235908565.png" alt="image-20240114235908565" style="zoom:67%;"></p></li>
+<li><p>局部三角形计数算法：<img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240114235932303.png" alt="image-20240114235932303" style="zoom:67%;"></p></li>
+<li><p>两个算法都需要tol的输入，代表着如果当前的特征值太小了（对最终答案没有影响）那么就停止计算</p></li>
+</ul>
+<h2 id="一些规律和模式">一些规律和模式</h2>
+<ul>
+<li>laws and patterns</li>
+</ul>
+<h3 id="triangle-participation-law">Triangle Participation Law</h3>
+<ul>
+<li><img src="../../../SCHOOL/BUAA/Dissertation/文献笔记/image-20240115000522099.png" alt="image-20240115000522099" style="zoom:67%;"></li>
+<li>这是一个顶点所在三角形个数的分布律，横纵坐标都是加了log的</li>
+<li>哦又看了眼图示，他这里只是在说明算法预测出来的结果和真实的结果非常一致</li>
+</ul>
+<h3 id="degree-triangle-law">Degree-Triangle Law</h3>
+<ul>
+<li>度-三角形幂律关系</li>
+<li>度-三角形幂律的斜率：
+<ul>
+<li>与度分布的斜率呈极其接近的关系</li>
+<li>特别，当度分布遵循幂律或对数正态分布时，度-三角形幂律的斜率与度分布斜率的负数几乎一致</li>
+</ul></li>
+<li>度数高的节点倾向于偏离上面提到的斜率
+<ul>
+<li>可能是因为高度节点具有大量度数为1的节点，这些节点不对形成三角形又帮助</li>
+</ul></li>
+</ul>
+<h2 id="总结-1">总结</h2>
+<ul>
+<li>展望：
+<ul>
+<li>利用"Map/Reduce"（'Hadoop'）架构来挖掘大规模图形（本文算法是往这个方向迈了一步，还需要与与流和半流式处理算法进行比较）</li>
+<li>推导使用特定数量的特征值进行近似的质量的理论结果</li>
+</ul></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">emilyu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://emilyu2003.github.io/2024/01/15/%E6%AF%95%E8%AE%BE%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">https://emilyu2003.github.io/2024/01/15/%E6%AF%95%E8%AE%BE%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%AF%95%E8%AE%BE/">毕设</a></div><div class="post_share"><div class="social-share" data-image="/img/my_avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/01/10/%E6%AF%95%E8%AE%BE%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">毕设文献笔记（一）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2024/01/10/%E6%AF%95%E8%AE%BE%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="毕设文献笔记（一）"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-10</div><div class="title">毕设文献笔记（一）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Disqus</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/my_avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">emilyu</div><div class="author-info__description">秃头歪三的废话坞</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/emilyu2003"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">这个人很懒 留下了很多废话</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#reductions-in-streaming-algorithm-with-an-application-to-counting"><span class="toc-number">1.</span> <span class="toc-text">Reductions
+in Streaming Algorithm with an Application to Counting</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stream-reductions-and-list-efficient-algorithms"><span class="toc-number">1.1.1.</span> <span class="toc-text">Stream
+reductions and list-efficient algorithms</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">预备知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%AE%97%E6%B3%95%E7%9A%84%E5%BD%92%E7%BA%A6"><span class="toc-number">1.3.</span> <span class="toc-text">流算法的归约</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E4%B8%AD%E4%B8%8D%E5%90%8C%E5%85%83%E7%B4%A0%E7%9A%84%E8%AE%A1%E6%95%B0"><span class="toc-number">1.4.</span> <span class="toc-text">流中不同元素的计数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#range-efficiently%E7%9A%84%E8%BF%91%E4%BC%BC%E8%AE%A1%E7%AE%97%E5%85%B6%E4%BB%96%E9%A2%91%E7%8E%87%E7%9F%A9"><span class="toc-number">1.5.</span> <span class="toc-text">range
+efficiently的近似计算其他频率矩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%BD%A2%E8%AE%A1%E6%95%B0"><span class="toc-number">1.6.</span> <span class="toc-text">三角形计数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#adjacency-stream-algorithm"><span class="toc-number">1.6.1.</span> <span class="toc-text">adjacency stream algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#incidence-stream-algorithm"><span class="toc-number">1.6.2.</span> <span class="toc-text">incidence stream algorithm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-number">1.7.</span> <span class="toc-text">讨论</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#efficient-semi-streaming-algorithms-for-local-triangle-counting-in-massive-graphs"><span class="toc-number">2.</span> <span class="toc-text">Efficient
+Semi-streaming Algorithms for Local Triangle Counting in Massive
+Graphs</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86-1"><span class="toc-number">2.2.</span> <span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#semi-streaming-graph-algorithms"><span class="toc-number">2.2.1.</span> <span class="toc-text">Semi-streaming graph
+algorithms</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%B0%E8%AE%A1%E9%9B%86%E5%90%88%E4%BA%A4%E9%9B%86"><span class="toc-number">2.3.</span> <span class="toc-text">估计集合交集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%B0%E8%AE%A1%E4%B8%89%E8%A7%92%E5%BD%A2%E6%95%B0%E9%87%8F"><span class="toc-number">2.4.</span> <span class="toc-text">估计三角形数量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E4%B8%BB%E5%AD%98%E4%B8%AD%E8%BF%9B%E8%A1%8C%E4%B8%89%E8%A7%92%E5%BD%A2%E8%AE%A1%E6%95%B0"><span class="toc-number">2.5.</span> <span class="toc-text">在主存中进行三角形计数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%81%E6%98%8E"><span class="toc-number">2.6.</span> <span class="toc-text">证明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-number">2.7.</span> <span class="toc-text">应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E5%9E%83%E5%9C%BE%E9%82%AE%E4%BB%B6"><span class="toc-number">2.7.1.</span> <span class="toc-text">检测垃圾邮件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9%E8%B4%A8%E9%87%8F"><span class="toc-number">2.7.2.</span> <span class="toc-text">社交网络中的内容质量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.8.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#a-space-efficient-streaming-algorithm-for-triangle-counting-using-the-birthday-paradox"><span class="toc-number">3.</span> <span class="toc-text">A
+Space Efficient Streaming Algorithm for Triangle Counting using the
+Birthday Paradox</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-number">3.1.</span> <span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.1.1.</span> <span class="toc-text">流的设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">3.1.2.</span> <span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#streaming-triangles"><span class="toc-number">3.2.1.</span> <span class="toc-text">streaming-triangles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#single-bit"><span class="toc-number">3.2.2.</span> <span class="toc-text">single-bit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fast-counting-of-triangles-in-large-real-networks-without-counting-algorithms-and-laws"><span class="toc-number">4.</span> <span class="toc-text">Fast
+Counting of Triangles in Large Real Networks without Counting Algorithms
+and Laws</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-2"><span class="toc-number">4.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E5%92%8C%E8%AF%81%E6%98%8E"><span class="toc-number">4.2.</span> <span class="toc-text">理论和证明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%A7%84%E5%BE%8B%E5%92%8C%E6%A8%A1%E5%BC%8F"><span class="toc-number">4.3.</span> <span class="toc-text">一些规律和模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#triangle-participation-law"><span class="toc-number">4.3.1.</span> <span class="toc-text">Triangle Participation Law</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#degree-triangle-law"><span class="toc-number">4.3.2.</span> <span class="toc-text">Degree-Triangle Law</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">4.4.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/15/%E6%AF%95%E8%AE%BE%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" title="毕设文献笔记（二）">毕设文献笔记（二）</a><time datetime="2024-01-15T07:36:08.000Z" title="Created 2024-01-15 15:36:08">2024-01-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/10/%E6%AF%95%E8%AE%BE%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="毕设文献笔记（一）">毕设文献笔记（一）</a><time datetime="2024-01-10T02:49:12.000Z" title="Created 2024-01-10 10:49:12">2024-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/09/%E7%94%B5%E5%AD%90%E8%88%9E%E6%9B%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="电子舞曲手册读书笔记（一）">电子舞曲手册读书笔记（一）</a><time datetime="2024-01-09T03:15:25.000Z" title="Created 2024-01-09 11:15:25">2024-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/26/Unity%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7%E9%93%BE%E5%AE%89%E8%A3%85/" title="Unity3D工具链安装笔记">Unity3D工具链安装笔记</a><time datetime="2023-12-26T06:37:23.000Z" title="Created 2023-12-26 14:37:23">2023-12-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/30/%E5%A4%8D%E6%9D%82%E6%80%A7%E7%B1%BB/" title="复杂性类">复杂性类</a><time datetime="2023-05-30T05:34:51.000Z" title="Created 2023-05-30 13:34:51">2023-05-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By emilyu</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Local search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'fsRbCk8Nuy3KOqDFR3dATKLN-gzGzoHsz',
+      appKey: 'QcoBfjjHRbYoXsg5DnJhty93',
+      avatar: 'robohash',
+      serverURLs: '',
+      emojiMaps: {"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_親親":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再見":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_發怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_發財":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可愛":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_嘔吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_壞笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尷尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_驚嚇":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadDisqus () {
+  var disqus_config = function () {
+    this.page.url = 'https://emilyu2003.github.io/2024/01/15/%E6%AF%95%E8%AE%BE%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/'
+    this.page.identifier = '2024/01/15/毕设文献笔记（二）/'
+    this.page.title = '毕设文献笔记（二）'
+  };
+
+  window.disqusReset = () => {
+    DISQUS.reset({
+      reload: true,
+      config: disqus_config
+    })
+  }
+
+  if (window.DISQUS) disqusReset()
+  else {
+    (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = 'https://.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  }
+}
+
+if ('Valine' === 'Disqus' || !true) {
+  if (true) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+  else loadDisqus()
+} else {
+  function loadOtherComment () {
+    loadDisqus()
+  }
+}
+</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/%5Bobject%20Object%5D"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
